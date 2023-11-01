@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" modified="2023-11-01T00:53:38.356Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="jHlQ__CCcOslhOAjxqEo" version="22.0.8" type="device">
+  <diagram name="Página-1" id="uHNMV3aA9SenxnczRpUz">
+    <mxGraphModel dx="637" dy="343" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-1" value="Paciente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="80" y="170" width="50" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-4" value="Marcar Consulta" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="65" y="310" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-5" value="Cadastrar-se" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="50" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-7" value="Cancelar Consulta" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="190" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-8" value="Consultar médicos&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="70" width="60" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-9" value="Verifica seus agendamentos" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="130" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-10" value="acessa noticias" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="270" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-11" value="Informa localização" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="157.5" y="290" width="85" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="160" as="sourcePoint" />
+            <mxPoint x="150" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scSPUbuP6-bo1m-vu0mx-4" value="include&lt;br&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=-90;" parent="ZPAJc-RZ4BtbZJU-FRVr-13" vertex="1" connectable="0">
+          <mxGeometry x="-0.2292" y="-3" relative="1" as="geometry">
+            <mxPoint x="-13" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-14" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="170" as="sourcePoint" />
+            <mxPoint x="120" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-15" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="180" as="sourcePoint" />
+            <mxPoint x="197" y="131" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-16" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="210" as="sourcePoint" />
+            <mxPoint x="207" y="141" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.167;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="260" as="sourcePoint" />
+            <mxPoint x="224" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZPAJc-RZ4BtbZJU-FRVr-19" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" target="ZPAJc-RZ4BtbZJU-FRVr-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="280" as="sourcePoint" />
+            <mxPoint x="202" y="312" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scSPUbuP6-bo1m-vu0mx-1" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ZPAJc-RZ4BtbZJU-FRVr-10" target="ZPAJc-RZ4BtbZJU-FRVr-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="290" as="sourcePoint" />
+            <mxPoint x="410" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="scSPUbuP6-bo1m-vu0mx-3" value="extend" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=30;" parent="1" vertex="1">
+          <mxGeometry x="195" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

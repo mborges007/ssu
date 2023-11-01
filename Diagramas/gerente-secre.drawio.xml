@@ -1,44 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2023-09-06T01:01:11.002Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="mJP00Tx2j9XpTEgEe2qJ" version="21.7.2" type="device">
+<mxfile host="app.diagrams.net" modified="2023-11-01T00:57:10.175Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="5YXBzvkVv0wfLzbBMAv0" version="22.0.8" type="device">
   <diagram name="Página-1" id="lWSNimkvHL_MWAN0Hk_j">
-    <mxGraphModel dx="928" dy="508" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1114" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TYgPXIvC_a5KOsvWe7ly-1" target="TYgPXIvC_a5KOsvWe7ly-8">
+        <mxCell id="TYgPXIvC_a5KOsvWe7ly-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="TYgPXIvC_a5KOsvWe7ly-1" target="TYgPXIvC_a5KOsvWe7ly-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-1" value="Secretaria" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="TYgPXIvC_a5KOsvWe7ly-1" value="Secretaria" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="90" y="170" width="60" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-8" value="Cria cadastro medico" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="TYgPXIvC_a5KOsvWe7ly-8" value="Cria cadastro medico" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="70" y="90" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-10" value="Confirma paciente" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="TYgPXIvC_a5KOsvWe7ly-10" value="Confirma paciente" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="190" y="130" width="90" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-11" value="Direção" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="500" y="160" width="50" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-14" value="Define escala medico&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="380" y="105" width="90" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-15" value="aceita/declina medico&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="480" y="50" width="90" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="TYgPXIvC_a5KOsvWe7ly-11" target="TYgPXIvC_a5KOsvWe7ly-15">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="340" y="270" as="sourcePoint" />
-            <mxPoint x="390" y="220" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="TYgPXIvC_a5KOsvWe7ly-11" target="TYgPXIvC_a5KOsvWe7ly-14">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="340" y="270" as="sourcePoint" />
-            <mxPoint x="390" y="220" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="TYgPXIvC_a5KOsvWe7ly-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.235;entryY=0.94;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="TYgPXIvC_a5KOsvWe7ly-1" target="TYgPXIvC_a5KOsvWe7ly-10">
+        <mxCell id="TYgPXIvC_a5KOsvWe7ly-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.235;entryY=0.94;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="TYgPXIvC_a5KOsvWe7ly-1" target="TYgPXIvC_a5KOsvWe7ly-10" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="340" y="270" as="sourcePoint" />
             <mxPoint x="390" y="220" as="targetPoint" />
