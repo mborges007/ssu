@@ -26,39 +26,50 @@
             <a class="col-md-6 acessar-n" href="login.html">Fazer login</a>
             <a class="col-md-6 acessar-p" href="cadastro.html">Criar conta</a> 
         </div>
-        <h2>Crie sua conta </h2>
-        <div class="form">
-            <div class="row">
-                <input class="form-control" type="text" placeholder="Nome completo">
+        <h2>Crie sua conta</h2>
+        <form action="processa_cadastro.php" method="post">
+            <div class="form">
+                <div class="row">
+                    <input class="form-control" type="text" name="nome" placeholder="Nome completo" required>
+                </div>
+                <div class="row">
+                    <input class="form-control" type="text" name="cpf" placeholder="CPF" required>
+                </div>
+                <div class="row">
+                    <input class="form-control" type="text" name="telefone" placeholder="Telefone" required>
+                </div>
+                <div class="row">
+                    <input class="form-control" type="date" name="data_nascimento" placeholder="Data de nascimento" required>
+                </div>
+                <div class="row">
+                    <div class="form-check col-md-4">
+                        <input class="form-check-input" type="radio" name="genero" value="Feminino" required>
+                        <label>Feminino</label>
+                    </div> 
+                    <div class="form-check col-md-4">
+                        <input class="form-check-input" type="radio" name="genero" value="Masculino" required>
+                        <label>Masculino</label>
+                    </div> 
+                    <div class="form-check col-md-4">
+                        <input class="form-check-input" type="radio" name="genero" value="Outros" required>
+                        <label>Outros</label>
+                    </div> 
+                </div>
+                <div class="row">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="row">
+                    <input class="form-control" type="password" name="senha" placeholder="Senha" required>
+                </div>
             </div>
-            <div class="row">    
-                <input class="form-control" type="text" placeholder="CPF">
-            </div>
-            <div class="row">
-                <input class="form-control" type="text" placeholder="Telefone">
-            </div>
-            <div class="row">
-                <input class="form-control" type="date" placeholder="Data de nascimento">
-            </div>
-            <div class="row">
-            <div class="form-check col-md-4">
-                <input class="form-check-input" type="radio"><label>Feminino</label>
-            </div> 
-            <div class="form-check col-md-4">
-                <input class="form-check-input" type="radio"><label>Masculino</label>
-            </div> 
-            <div class="form-check col-md-4">
-                <input class="form-check-input" type="radio"><label>Outros</label>
-            </div> 
-        </div>
-            <div class="row">
-                <input class="form-control" type="email" placeholder="E-mail">
-            </div>
-            <div class="row">
-                <input class="form-control" type="password" placeholder="Senha">
-            </div>
-        <button class="btn">Cadastrar</button>
+            <button class="btn" type="submit">Cadastrar</button>
+        </form>
     </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">    
+</body>
+</html>
 
 
 

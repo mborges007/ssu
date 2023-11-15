@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,16 +27,18 @@
             <a class="col-sm-6 acessar-n" href="cadastro.html">Criar conta</a> 
         </div>
         <h2>Acesse sua conta</h2>  
-        <div class="form">
-            <div class="row">
-                <input class="form-control" type="email" placeholder="E-mail">
+        <form action="processa_login.php" method="post">
+            <div class="form">
+                <div class="row">
+                    <input class="form-control" type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="row">
+                    <input class="form-control" type="password" name="senha" placeholder="Senha" required>
+                </div>
             </div>
-            <div class="row">
-                <input class="form-control" type="password" placeholder="Senha">
-            </div>
-        </div>
-        <a class="esq" href="#">Esqueceu sua senha?</a>
-        <button class="btn">Entrar</button>
+            <a class="esq" href="#">Esqueceu sua senha?</a>
+            <button class="btn" type="submit">Entrar</button>
+        </form>
     </div>
 </div>
 

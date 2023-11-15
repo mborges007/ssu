@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@442&display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Lexend:wght@900 & display=swap');
 
-/***** Navbar *****/ 
+/***** Navbar *****/
 
 nav {
     height: 100px;
@@ -20,24 +20,20 @@ nav {
 .btn-nav {
     background-color: white;
     color: rgba(218, 224, 230, 0.582);
-    border: 2px solid rgba(218, 224, 230, 0.582);    
+    border: 2px solid rgba(218, 224, 230, 0.582);
     border-radius: 50px;
     float: right;
 }
 
 .btn-nav:hover {
-    border: 2px solid; 
+    border: 2px solid;
     box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
 }
 
-.bi-color {
-    color: #3dcc1d;
-} 
 
 
 
-
-/***** Login e cadastro *****/ 
+/***** Login e cadastro *****/
 
 .login {
     box-shadow: 0 2px 30px 0 rgba(218,224,230,.5);
@@ -45,7 +41,7 @@ nav {
     width: 60%;
     display: inline-block;
     margin: 0 18%;
-  
+
 }
 
 .login .btn {
@@ -77,7 +73,7 @@ nav {
     color: rgb(71, 179, 246);
     text-decoration: none;
     box-shadow: 0 2px 30px 0 rgba(218,224,230,.5);
-    
+
 }
 .acessar-n {
     text-align: center;
@@ -113,7 +109,7 @@ nav {
 
 
 
-/* cadastro */ 
+/* cadastro */
 #cadastro .acessar-n{
     margin-left: 10px;
 }
@@ -128,7 +124,7 @@ nav {
 /***** Front - página principal ****/
 
 #front {
-    background-image: url(../img/teste.jpeg);
+    background-image: url(../img/fundo_front.jpeg);
     text-align: center;
     padding-top: 120px;
     height: 750px;
@@ -136,7 +132,7 @@ nav {
 
 #front h1 {
     font-family: 'Gabarito', sans-serif;
-    color:#071820; 
+    color:#071820;
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -144,7 +140,7 @@ nav {
 #front p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    color: #727272; 
+    color: #727272;
 }
 
 #front #mensagem {
@@ -152,17 +148,12 @@ nav {
     padding-left: 50px;
 }
 
-#front svg {
-    width: 100%;
-    margin-bottom: 30px;
-}
-
 #front .btn {
-    color: white; 
+    color: white;
     background-color:rgb(71, 179, 246);
     height: 50px;
     width: 200px;
-    border: 2px solid; 
+    border: 2px solid;
     border-radius: 50px;
     margin-top: 25px;
 }
@@ -174,15 +165,30 @@ nav {
 
 
 
-/***** introducao *****/ 
+/***** introducao *****/
 
 #introducao {
-    margin-bottom: 130px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 #introducao .text {
     padding-top: 10%;
+    margin-bottom: 30px;
     text-align: center;
+}
+
+#introducao .text h2 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+    margin-bottom: 20px;
+}
+
+#introducao .text p {
+    font-size: 18px;
+    color: #318de4;
+    font-weight: 500;
 }
 
 #introducao #mensagem {
@@ -194,10 +200,13 @@ nav {
 }
 
 #introducao h3 {
+    color: rgb(0, 77, 110);
     margin-bottom: 40px;
 }
 
-
+#introducao .cards p {
+    text-align: justify;
+}
 
 
 /***** busca profisisonais *****/
@@ -207,7 +216,7 @@ nav {
     background-color: #cae9f5;
     height: 100%;
     padding: 30px 80px;
-    margin-top: 20px;
+    margin-bottom: 100px;
 }
 
 #busca .form-select{
@@ -225,7 +234,7 @@ nav {
     width: 95%;
     border: none;
     outline: 0;
-    padding-top: 5px; 
+    padding-top: 5px;
 }
 
 #busca i {
@@ -235,7 +244,7 @@ nav {
 #busca h1 {
     font-size: 50px;
     font-weight: 650;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 #busca p {
@@ -251,30 +260,54 @@ nav {
 
 /***** perguntas frequentes *****/
 
+#perguntas {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#perguntas h1 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+    margin-bottom: 50px;
+}
 
 #perguntas .card-header {
-    background-color: white; 
+    background-color: white;
     padding: 13px;
     text-align: left;
     border-bottom: 1px solid  #979996a6;
 }
 
 #perguntas button {
-    white-space: normal; 
-    color: rgb(0, 77, 110);
+    white-space: normal;
+    color: rgb(18, 151, 233);
     text-decoration: none;
     font-weight: 500;
+    font-size: 17px;
     padding: 8px 16px;
 }
 
 
+#mensagem .card {
+    padding: 20px;
+}
 
+#mensagem .card .btn {
+    color: white;
+    background-color:rgb(71, 179, 246);
+    height: 40px;
+    margin-top: 15px;
+}
 
+#mensagem .card .btn:hover {
+    background-color: rgb(0, 77, 110);
+}
 
 
 
 /* Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .login{
         width: 90%;
         margin: 0 20px;
@@ -295,7 +328,7 @@ nav {
     }
 
     img {
-        width: 43%; 
+        width: 43%;
     }
 
     #front img {
@@ -305,12 +338,12 @@ nav {
     #front svg {
         display: none;
     }
-    
+
 
 }
 
 /* Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
-@media (min-width: 576px) and (max-width: 767.98px){ 
+@media (min-width: 576px) and (max-width: 767.98px){
     .login{
         width: 90%;
         margin: 0 20px;
@@ -333,7 +366,7 @@ nav {
     }
 
     img {
-        width: 50%; 
+        width: 50%;
     }
 
     #front img {
