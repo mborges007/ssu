@@ -304,6 +304,35 @@ nav {
     background-color: rgb(0, 77, 110);
 }
 
+/**** AGENDAMENTO ****/
+
+
+#agendamento-title {
+    color: #004D6E;
+    text-align: center;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+#agendamento-text {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#agendamento-login {
+    width: 100%;
+    height: 920px;
+    background-image: url("../img/agendamento_background-1920x920.svg");
+    background-size: cover;
+  }
+
 
 
 /* Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
