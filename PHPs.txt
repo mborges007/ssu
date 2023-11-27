@@ -1,0 +1,83 @@
+<?php
+
+class Database {
+    private $host = 'seu_servidor';
+    private $user = 'seu_usuario';
+    private $password = 'sua_senha';
+    private $database = 'seu_banco_de_dados';
+
+    protected $conn;
+
+    public function __construct() {
+        try {
+            $this->conn = new PDO("mysql:host=$this->host;dbname=$this->database", $this->user, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Erro na conexão com o banco de dados: " . $e->getMessage();
+        }
+    }
+
+    public function getConnection() {
+        return $this->conn;
+    }
+}
+----------------------------------------------------------------------------------------------
+<?php
+
+require_once('Database.php');
+
+class Cadastro {
+    private $db;
+
+    public function __construct() {
+        $this->db = new Database();
+    }
+
+    public function cadastrarUsuario($nome, $cpf, $telefone, $dataNascimento, $genero, $email, $senha) {
+        try {
+            $conn = $this->db->getConnection();
+
+            $sql = "INSERT INTO usuarios (nome, cpf, telefone, data_nascimento, genero, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$nome, $cpf, $telefone, $dataNascimento, $genero, $email, password_hash($senha, PASSWORD_DEFAULT)]);
+
+            return true;
+        } catch (PDOException $e) {
+            echo "Erro ao cadastrar o usuário: " . $e->getMessage();
+            return false;
+        }
+    }
+}
+---------------------------------------------------------------------
+<?php
+
+require_once('Database.php');
+
+class Login {
+    private $db;
+
+    public function __construct() {
+        $this->db = new Database();
+    }
+
+    public function verificarCredenciais($email, $senha) {
+        try {
+            $conn = $this->db->getConnection();
+
+            $sql = "SELECT * FROM usuarios WHERE email = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$email]);
+
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result && password_verify($senha, $result['senha'])) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao verificar credenciais: " . $e->getMessage();
+            return false;
+        }
+    }
+}
