@@ -20,7 +20,8 @@ src="https://www.svgrepo.com/show/312259/github.svg"/>
 
 
 ## Documentos
-Em desenvolvimento
+[Visualizar Documentação em PDF](ssu/Documentação/Especificação de Requisitos de Software_v3.pdf){:target="_blank"}
+
 
 ## Integrantes do Projeto
 - [Beatriz Machado de Oliveira](https://github.com/beamclive)
