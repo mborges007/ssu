@@ -20,7 +20,7 @@ src="https://www.svgrepo.com/show/312259/github.svg"/>
 
 
 ## Documentos
-[Visualizar Documentação em PDF (clique com o botão direito e escolha "Abrir link em nova guia")](ssu/Documentação/Especificação de Requisitos de Software_v3.pdf)
+[Visualizar Documentação em PDF](https://github.com/mborges007/ssu/blob/main/Documenta%C3%A7%C3%A3o/Especifica%C3%A7%C3%A3o%20de%20Requisitos%20de%20Software_v3.pdf)
 
 
 
