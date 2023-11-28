@@ -1,0 +1,85 @@
+/* Lógico_1: */
+
+CREATE TABLE Pessoa (
+    id_pessoa int PRIMARY KEY,
+    nome varchar(45),
+    cpf varchar(16),
+    telefone varchar(21),
+    data_nascimento date,
+    genero char,
+    email varchar(45),
+    senha varchar(12),
+    endereco varchar(45),
+    bairro varchar(25),
+    numero varchar(6)
+);
+
+CREATE TABLE MEDICO (
+    id_medico int,
+    crm varchar(15),
+    FK_Pessoa_id_pessoa int,
+    FK_ESPECIALIDADE_id_especialidade int,
+    PRIMARY KEY (id_medico, FK_Pessoa_id_pessoa)
+);
+
+CREATE TABLE PACIENTE (
+    id_paciente int,
+    FK_Pessoa_id_pessoa int,
+    PRIMARY KEY (id_paciente, FK_Pessoa_id_pessoa)
+);
+
+CREATE TABLE SECRETARIA (
+    id_secretaria int,
+    registro_secretaria int,
+    FK_Pessoa_id_pessoa int,
+    PRIMARY KEY (id_secretaria, FK_Pessoa_id_pessoa)
+);
+
+CREATE TABLE ESPECIALIDADE (
+    id_especialidade int PRIMARY KEY,
+    nome varchar(45)
+);
+
+CREATE TABLE CONSULTA (
+    id_consulta int PRIMARY KEY,
+    data_consulta date,
+    FK_Pessoa_id_pessoa int,
+    FK_UNIDADE_id_unidade int
+);
+
+CREATE TABLE UNIDADE (
+    id_unidade int PRIMARY KEY,
+    nome_unidade varchar(45),
+    qtidade_medico int,
+    telefone varchar(15)
+);
+ 
+ALTER TABLE MEDICO ADD CONSTRAINT FK_MEDICO_2
+    FOREIGN KEY (FK_Pessoa_id_pessoa)
+    REFERENCES Pessoa (id_pessoa)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE MEDICO ADD CONSTRAINT FK_MEDICO_3
+    FOREIGN KEY (FK_ESPECIALIDADE_id_especialidade)
+    REFERENCES ESPECIALIDADE (id_especialidade)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE PACIENTE ADD CONSTRAINT FK_PACIENTE_2
+    FOREIGN KEY (FK_Pessoa_id_pessoa)
+    REFERENCES Pessoa (id_pessoa)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE SECRETARIA ADD CONSTRAINT FK_SECRETARIA_2
+    FOREIGN KEY (FK_Pessoa_id_pessoa)
+    REFERENCES Pessoa (id_pessoa)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE CONSULTA ADD CONSTRAINT FK_CONSULTA_2
+    FOREIGN KEY (FK_Pessoa_id_pessoa)
+    REFERENCES Pessoa (id_pessoa)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE CONSULTA ADD CONSTRAINT FK_CONSULTA_3
+    FOREIGN KEY (FK_UNIDADE_id_unidade)
+    REFERENCES UNIDADE (id_unidade)
+    ON DELETE CASCADE;
