@@ -2,7 +2,7 @@
 Projeto Integrador do 2º semestre da FATEC Araras | Tema: Saude e bem estar
 
 # Objetivo 
-Em desenvolvimento
+O projeto consiste no desenvolvimento de um programa que pretende dar suporte ao Sistema Único de Saúde (SUS), no agendamento de consultas e exames, fornecendo informativos sobre calendário de vacinação, campanhas de saúde e outras informações que são importantes para a população. Nosso programa oferecerá recursos que permitirá aos usuários realizar agendamentos de consultas e exames de forma rápida e precisa sendo muito útil para aqueles que tem dificuldades em conseguir atendimento médico em curto tempo e diminuindo filas e burocracias
 
 ## Tecnologias utilizadas
 
