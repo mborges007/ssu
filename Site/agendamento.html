@@ -50,55 +50,65 @@
     </div>
   </nav>
 </header>
-<body>
-    <div id="agendamento-login" >
-        <div class="container-md mt-5">
-            <div class="row">
-                
-                <div class="col d-flex flex-column justify-content-center" id="teste">
-                    <h1 id="agendamento-title">Agende sua consulta</h1>
-                    <p class="text">Selecione o dia que deseja agendar a sua consulta e utilize os filtros para aprimorar sua busca de médicos disponíveis</p>
-                    <div >
-                      <div class="form-select">
-                        <img src="./img/location_icon.svg" />
-                        <input class="" placeholder= "Selecione uma cidade">
-                    </div>
-                    <div class="form-select mt-3">
-                      <img src="./img/especialidade_icon.svg" />
-                      <input class="" placeholder= "Selecione uma especialidade">
-                  </div>
-                  <div class="form-select mt-3">
-                    <img src="./img/medico_icon.svg" />
-                    <input class="" placeholder= "Selecione um médico">
-                  </div>
-                    </div>
 
-                  <div class="align-self-end">
-                    <button class="btn-agendamento"><a href="login.html" class="nav-link">Buscar</a></button>
-                  </div>
-                    
-                </div>
-                <div class="col-md-6">
-                  <div class="calendar calendar-second" style="margin-top: 50px;" id="calendar_first">
-                      <div class="calendar_header">
-                      <button class="switch-month switch-left">
-                          <i class="bi-caret-left-fill"></i>
-                      </button>
-                      <h2></h2>
-                      <button class="switch-month switch-right">
-                          <i class="bi-caret-right-fill"></i>
-                      </button>
-                      </div>
-                      <div class="calendar_weekdays"></div>
-                      <div class="calendar_content"></div>
-                  </div>    
-          
-              </div>
+<body>
+
+  <div id="agendamento-login">
+    <div class="container-md mt-5">
+      <div class="row">
+        <div class="col d-flex flex-column justify-content-center" id="agendamento-pesquisa">
+          <h1 id="agendamento-title">Agende sua consulta</h1>
+          <p class="text">Selecione o dia que deseja agendar a sua consulta e utilize os filtros para aprimorar sua busca
+            de médicos disponíveis</p>
+          <div id="filtros">
+            <div class="form-select">
+              <img src="./img/location_icon.svg">
+              <input class="" placeholder="Selecione uma cidade">
             </div>
+            <div class="form-select mt-3">
+              <img src="./img/especialidade_icon.svg" />
+              <input class="" placeholder="Selecione uma especialidade">
+            </div>
+            <div class="form-select mt-3">
+              <img src="./img/medico_icon.svg" />
+              <input class="" placeholder="Selecione um médico">
+            </div>
+          </div>
+          <div class="align-self-end">
+            <button class="btn-agendamento"><a href="login.html" class="nav-link">Buscar</a></button>
+          </div>
         </div>
+
+        <div class="col-md-6" id="calendario">
+          <div class="calendar calendar-second" style="margin-top: 50px;" id="calendar_first">
+            <div class="calendar_header">
+              <button class="switch-month switch-left">
+                <i class="bi-caret-left-fill"></i>
+              </button>
+              <button class="switch-month switch-right">
+                <i class="bi-caret-right-fill"></i>
+              </button>
+            </div>
+            <div class="calendar_weekdays"></div>
+            <div class="calendar_content"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
