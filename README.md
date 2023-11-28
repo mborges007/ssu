@@ -20,7 +20,8 @@ src="https://www.svgrepo.com/show/312259/github.svg"/>
 
 
 ## Documentos
-[Visualizar Documentação em PDF](ssu/Documentação/Especificação de Requisitos de Software_v3.pdf){:target="_blank"}
+[Visualizar Documentação em PDF](ssu/Documentação/Especificação de Requisitos de Software_v3.pdf){:target="_blank" rel="noopener noreferrer" onclick="window.open(this.href,'_blank');return false;"}
+
 
 
 ## Integrantes do Projeto
