@@ -134,6 +134,7 @@ CREATE TABLE `unidades` (
   `endereco` varchar(40) NOT NULL,
   `qtde_medicos` int(10) NOT NULL,
   `telefone` varchar(15) NOT NULL,
+  `cidade` varchar(30) NOT NULL,
   `ID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -142,16 +143,16 @@ CREATE TABLE `unidades` (
 --
 
 INSERT INTO `unidades` (`endereco`, `qtde_medicos`, `telefone`, `ID`) VALUES
-('R. Carlos Andrade Ribeiro', 5, '(19)335-6325', 1),
-('Av Luiz Andrade', 8, '(35)99632-2356', 2),
-('Rua Ribeiro da Silva', 3, '(19)3652-9698', 3),
-('Av. Augusta Viola da Costa', 8, '(19)3586-3256', 4),
-('Rua Santos Dumont', 12, '(19)99863-2356', 5),
-('Rua Brasília', 5, '(19)3562-7536', 6),
-('Av. Carlos Bonfanti', 5, '(19)9632-9632', 7),
-('Rua Barão de Arary', 7, '(19)3542-9988', 8),
-('Rua Domingos Graziano', 10, '(19)3541-8523', 9),
-('Rua Emilio Ferreira', 10, '(19)3652-9632', 10);
+('R. Carlos Andrade Ribeiro', 5, '(19)335-6325', 'LEME', 1),
+('Av Luiz Andrade', 8, '(35)99632-2356', 'LEME', 2),
+('Rua Ribeiro da Silva', 3, '(19)3652-9698', 'ARARAS', 3),
+('Av. Augusta Viola da Costa', 8, '(19)3586-3256', 'ARARAS', 4),
+('Rua Santos Dumont', 12, '(19)99863-2356', 'ARARAS', 5),
+('Rua Brasília', 5, '(19)3562-7536', 'LEME', 6),
+('Av. Carlos Bonfanti', 5, '(19)9632-9632', 'ARARAS', 7),
+('Rua Barão de Arary', 7, '(19)3542-9988', 'LEME', 8),
+('Rua Domingos Graziano', 10, '(19)3541-8523', 'ARARAS', 9),
+('Rua Emilio Ferreira', 10, '(19)3652-9632', 'ARARAS', 10);
 
 --
 -- Índices para tabelas despejadas
