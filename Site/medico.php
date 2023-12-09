@@ -4,7 +4,7 @@ require_once('database.php');
 
 class Medico {
     private int $id;
-    private string $name;
+    private string $nome;
     private string $crm;
     private int $especialidade;
 
@@ -21,12 +21,12 @@ class Medico {
         $this->id = $id;
     }
 
-    public function getName(): string {
-        return $this->name;
+    public function getNome(): string {
+        return $this->nome;
     }
 
-    public function setName(string $name){
-        $this->name = $name;
+    public function setNome(string $nome){
+        $this->nome = $nome;
     }
 
     public function getCRM(): string {

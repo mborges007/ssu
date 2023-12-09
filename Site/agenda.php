@@ -34,7 +34,7 @@ class Agenda {
         }
     }
 
-    public function lsitarEspecialidades()
+    public function listarEspecialidades()
     {
         try {
             $conn = $this->db->getConnection();

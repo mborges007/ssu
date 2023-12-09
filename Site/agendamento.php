@@ -1,3 +1,8 @@
+<?php
+$agenda = new Agenda();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,9 +59,6 @@
 </header>
 
 <body>
-
-
-
   <div id="agendamento-login">
     <div class="container-md mt-5">
       <div class="row">
@@ -68,20 +70,44 @@
 
             <div class="custom-select-wrapper">
               <img class="custom-select-img" src="./img/location_icon.svg">
-              <select class="custom-select">
+              <select class="custom-select" name="cidade" placeholder="Selecione uma cidade">
                 <option selected>Selecione uma cidade</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <?php
+                    $cidades = $agenda->listarCidades();
+
+                    foreach ($cidades as $cidade) {
+                      echo "<option value='{$medico->getId()}'>{$medico->getNome()}</option>";
+                    }
+                ?>
               </select>
             </div>
-            <div class="form-select mt-3">
-              <img src="./img/especialidade_icon.svg" />
-              <input class="" placeholder="Selecione uma especialidade">
+
+            <div class="custom-select-wrapper">
+              <img class="custom-select-img" src="./img/especialidade_icon.svg">
+              <select class="custom-select" name="especialidade" placeholder="Selecione uma especialidade">
+                <option selected>Selecione uma especialidade</option>
+                <?php
+                    $especialidades = $agenda->listarEspecialidades();
+
+                    foreach ($especialidades as $especialidade) {
+                      echo "<option value='{$especialidade->getId()}'>{$especialidade->getDescricao()}</option>";
+                    }
+                ?>
+              </select>
             </div>
-            <div class="form-select mt-3">
-              <img src="./img/medico_icon.svg" />
-              <input class="" placeholder="Selecione um médico">
+
+            <div class="custom-select-wrapper">
+              <img class="custom-select-img" src="./img/especialidade_icon.svg">
+              <select class="custom-select" name="medico " placeholder="Selecione um Médico">
+                <option selected>Selecione um médico</option>
+                <?php
+                    $medicos = $agenda->listarMedicos();
+
+                    foreach ($medicos as $medico) {
+                      echo "<option value='{$medico->getId()}'>{$medico->getNome()}</option>";
+                    }
+                ?>
+              </select>
             </div>
           </div>
           <div class="align-self-end">
