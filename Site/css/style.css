@@ -372,6 +372,45 @@ nav {
   #filtros .form-select:hover{
     box-shadow: none;
   }
+
+
+  .custom-select-wrapper {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 6px 20px 0 rgba(39,53,105,.2);
+    margin: 5px;
+  }
+
+  .custom-select-img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .custom-select {
+    width: 100%;
+    padding: 13px;
+    padding-left: 40px; /* Adjust the padding to make space for the image */
+    border-radius: 6px;
+    outline: none;
+    border: none;
+  }
+
+  .custom-select::after {
+    content: "\25BC"; /* Unicode character for down arrow */
+    font-size: 25px;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+
+  
+
     
   #filtros input {
         width: 90%;
