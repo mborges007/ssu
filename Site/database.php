@@ -1,10 +1,10 @@
 <?php
 
 class Database {
-    private $host = 'seu_servidor';
-    private $user = 'seu_usuario';
-    private $password = 'sua_senha';
-    private $database = 'seu_banco_de_dados';
+    private $host = '127.0.0.1';
+    private $user = 'root';
+    private $password = '';
+    private $database = 'ssu';
 
     protected $conn;
 

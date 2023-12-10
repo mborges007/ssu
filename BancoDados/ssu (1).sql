@@ -12,6 +12,10 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
+CREATE DATABASE SSU;
+USE SSU;
+
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -142,7 +146,7 @@ CREATE TABLE `unidades` (
 -- Extraindo dados da tabela `unidades`
 --
 
-INSERT INTO `unidades` (`endereco`, `qtde_medicos`, `telefone`, `ID`) VALUES
+INSERT INTO `unidades` (`endereco`, `qtde_medicos`, `telefone`, `cidade`, `ID`) VALUES
 ('R. Carlos Andrade Ribeiro', 5, '(19)335-6325', 'LEME', 1),
 ('Av Luiz Andrade', 8, '(35)99632-2356', 'LEME', 2),
 ('Rua Ribeiro da Silva', 3, '(19)3652-9698', 'ARARAS', 3),

@@ -1,16 +1,14 @@
 <?php
 
-require_once('database.php');
-
 class Medico {
     private int $id;
     private string $nome;
     private string $crm;
-    private int $especialidade;
+    private Especialidade $especialidade;
 
 
     public function __construct() {
-        $this->db = new Database();
+        
     }
 
     public function getId(): int {
@@ -37,11 +35,11 @@ class Medico {
         $this->crm = $crm;
     }
 
-    public function getEspecialidade(): int {
+    public function getEspecialidade(): Especialidade {
         return $this->especialidade;
     }
 
-    public function setEspecialidade(int $especialidade){
+    public function setEspecialidade(Especialidade $especialidade){
         $this->especialidade = $especialidade;
     }
 }

@@ -408,15 +408,18 @@ nav {
     transform: translateY(-50%);
   }
   
-
-  
-
-    
   #filtros input {
         width: 90%;
         border: none;
         outline: 0;
         padding-top: 5px;
+    }
+
+    #medicos h1 {
+        color:rgb(2, 57, 80);
+        font-family: 'Lexend', sans-serif;
+        font-weight: 790;
+        margin-bottom: 50px;
     }
 
 
