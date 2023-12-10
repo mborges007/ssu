@@ -4,22 +4,24 @@ require_once('database.php');
 
 class Login {
     private $db;
+    private int $idUsuario;
 
     public function __construct() {
         $this->db = new Database();
     }
 
-    public function verificarCredenciais($email, $senha) {
+    public function autenticar($email, $senha) {
         try {
             $conn = $this->db->getConnection();
 
-            $sql = "SELECT * FROM usuarios WHERE email = ?";
+            $sql = "SELECT REGISTRO, SENHA FROM usuarios WHERE email = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$email]);
 
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result && password_verify($senha, $result['senha'])) {
+                $this->idUsuario = $result['REGISTRO'];
                 return true;
             } else {
                 return false;
@@ -28,5 +30,9 @@ class Login {
             echo "Erro ao verificar credenciais: " . $e->getMessage();
             return false;
         }
+    }
+
+    public function getUsuario() : int {
+        return $this->idUsuario;
     }
 }
