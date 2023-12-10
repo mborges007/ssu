@@ -30,9 +30,6 @@ nav {
     box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
 }
 
-
-
-
 /***** Login e cadastro *****/
 
 .login {
@@ -107,8 +104,6 @@ nav {
     color: rgb(0, 77, 110);
 }
 
-
-
 /* cadastro */
 #cadastro .acessar-n{
     margin-left: 10px;
@@ -122,15 +117,16 @@ nav {
 /***** Front - página principal ****/
 
 #front {
-    background-image: url(../img/img-calendario_vacinação/Vacinação1.png);
+    background-image: url(../img/img-calendario_vacinação/capa.png);
     text-align: center;
-    padding-top: 120px;
-    height: 750px;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    /* height: 750px; */
 }
 
 #front h1 {
     font-family: 'Gabarito', sans-serif;
-    color:#071820;
+    color:#ffffff;
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -138,7 +134,26 @@ nav {
 #front p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    color: #727272;
+    color: #ffffff;
+}
+
+.resumo{
+    padding-top: 40rem;
+}
+
+.calendario-header {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.calendario-header__descricao {
+    margin-left: 5rem;
+    margin-right:5rem;
+    background: #eeeeee21;
+    border-radius: 12rem;
+    box-shadow: 5px 5px 10px  #000000;
+    padding: 1em;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12157);
 }
 
 #front #mensagem {
@@ -160,57 +175,184 @@ nav {
     background-color:  rgb(0, 77, 110);
 }
 
-/* Menu calendário */
-
-section#menu_calendario{
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	#menu-container {
-		position: relative;
-		margin: 60px auto;
-		box-sizing: border-box;
-
-		ul {
-			display: flex;
-			background: rgb(50, 54, 57);
-			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-			padding-left: 30px;
-			padding-right: 30px;
-			margin: 0;
-
-			li {
-				display: flex;
-				align-items: center;
-				min-height: 48px;
-				margin-left: 60px;
-				cursor: pointer;
-				user-select: none;
-
-				&:first-child {
-					margin-left: 0;
-				}
-
-				a {
-					color: rgb(241, 241, 241);
-				}
-			}
-		}
-
-		#line {
-			position: absolute;
-			bottom: 0;
-			height: 2px;
-			background: blue;
-			transition: all 150ms ease-in-out;
-		}
-	}
-	
-	h1 {
-		margin-top: 30px;
-		font-weight: 500;
-		color: #212121;
-	}
+/* opções da timeline */
+#menutimeline{
+    padding-top: 2rem;
+    align-items: center;
 }
+
+#conteudo {
+    display: block;
+    width: 100%;
+    padding: 0;
+    clear: both;
+}
+
+.centralizar{
+    margin-left: 30rem;
+}
+
+#menu_linhatempo{
+    padding-top: 5rem;
+    paddin
+}
+
+
+/* estrutura de timeline */
+.main-timeline {
+    position: relative;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .main-timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #939597;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .timeline {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: #939597;
+    border: 5px solid #f5df4d;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -12px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .main-timeline::after {
+      left: 31px;
+    }
+  
+    /* Full-width containers */
+    .timeline {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+      left: 18px;
+    }
+  
+    .left::before {
+      right: auto;
+    }
+  
+    /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
+  .card {
+    width: 400px; /* Ajuste o valor conforme necessário */
+  }
+  
+
+  .titulo_card{
+    font-size: 20px;
+    color: rgb(36, 130, 189);
+  }
+  .sub_titulo{
+    font-size: 15px;
+  }
+
+  .destaque{
+    font-weight: bold; /* Realce o texto de destaque tornando-o em negrito */
+    color: #004ec3;
+  }
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .centralizar{
+    }
+ }
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+
+ }

@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Estilo customizado -->
-    <link rel="stylesheet" type="text/css" href="./css/stylecalendariovacinacao.css">
-    <!-- ICONE -->
-    <link rel="icon" href="./img/logo.png">
-    <!-- Bootstrap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Calendário de Vacinação</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilo customizado -->
+  <link rel="stylesheet" type="text/css" href="./css/stylecalendariovacinacao.css">
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- ICONE -->
+  <link rel="icon" href="./img/logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@900&display=swap">
+
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <title>Calendário de Vacinação</title>
+</head>
 <body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container">
+        <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
 
-  
-  
-<!-- Navbar -->
-<header>
-  <nav class="navbar navbar-expand-md fixed-top">
-    <div class="container">
-      <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+          <i class="bi bi-list bi-color"></i>
+        </button>
 
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
-        <i class="bi bi-list bi-color"></i>
-      </button>
-
-      <!--<div class="collapse navbar-collapse" id="navCollapse">-->
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="#" class="nav-link">Agendamentos</a>
@@ -47,49 +48,267 @@
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-
-<!-- Pagina de apresentação -->
-<section id="front">
-  <div class="">
-    <div class="row w-100">
-      <div class="col-md-7" id="mensagem">
-        <h1>Calendário de Vacinação</h1>
-        <p>A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando.</p>
-        <button class="btn">
-          <a href="" class="nav-link">Visualizar Calendário</a>
-        </button>
+  <!-- Pagina de apresentação -->
+  <section id="front">
+    <div class="CalendarioVacinacao">
+      <div class="row w-100">
+        <div class="col-md-7" id="mensagem">
+          <h1>Vacinações</h1>
+          <p>A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando.</p>
+          <button class="btn">
+            <a href="" class="nav-link">Visualizar Calendário</a>
+          </button>
+        </div>
+        <div class="col-md-5"></div>
       </div>
-      <div class="col-md-5">
+    </div>
+  </section>
+
+  <!-- Seção de Resumo -->
+  <section id="resumo">
+    <div class="calendario-header">
+      <div class="calendario-header__descricao">
+        <p class="calendario-header__descricao__texto">
+          <b>A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis.</b>
+          O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde – SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menutimeline">
+    <div class="centralizar">
+      <div class="btn-group">
+        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked />
+        <label class="btn btn-secondary" for="option1" onclick="mostrarTimeline('Crianca')">Criança</label>
+  
+        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+        <label class="btn btn-secondary" for="option2" onclick="mostrarTimeline('Adolescente')">Adolescente</label>
+  
+        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
+        <label class="btn btn-secondary" for="option3" onclick="mostrarTimeline('AdultoIdoso')">Adulto e Idoso</label>
+  
+        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
+        <label class="btn btn-secondary" for="option4" onclick="mostrarTimeline('Gestante')">Gestante</label>
+      </div>
+    </div>
+  </section>
+
+<div class="timeline mx-auto" id="timelineCriancaContent">
+  <div class="container py-4">
+    <div class="main-timeline">
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">Ao Nascer</h3>
+            <h5 class="sub_titulo">Vacina BCG (Dose única)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra formas graves da <span class="destaque">tuberculose</span>(miliar e meníngea)</p><br>
+            <h5 class="sub_titulo">Vacina Hepatite B (recombinante HB)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Hepatite B</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-8">
+            
+            <h3 class="titulo_card">2 Meses</h3>
+            <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p><br>
+            
+            <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (1ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção conta <span class="destaque">Poliomelite</span></p>
+
+            <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) (1ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="m-0">Proteção contra infecções invasivas (como <span class="destaque">meningite</span> e pneumonia) e otite média aguda, causada pelos 10 sorotipos de Streptococus pneumoniae</p>
+            
+            <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) (1ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas: </h5>
+            <p class="m-0">Proteção contra diarreia por <span class="destaque">rotavírus</span> (Gastroenterites)</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">3 Meses</h3>
+            <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) (1ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção conta <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-8">
+            <h3 class="titulo_card">4 Meses</h3>
+            <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) (2ª dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p><br>
+      
+            <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (2ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
+      
+            <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) (2ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="m-0">Proteção contra infecções invasivas (como <span class="destaque">meningite</span> e pneumonia) e otite média aguda, causada pelos 10 sorotipos de Streptococus pneumoniae</p>
+            
+            <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) (2ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas: </h5>
+            <p class="m-0">Proteção contra diarreia por <span class="destaque">rotavírus</span> (Gastroenterites)</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">5 Meses</h3>
+            <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) (2ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção conta <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">6 Meses</h3>
+            
+            <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) (3ª dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p><br>
+      
+            <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (3ª dose)</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
+      
+            <h3 class="sub_titulo">Vacina Influenza (1 ou 2 doses (anual))</h3>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra infecções pelo vírus <span class="destaque">influenza</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">9 Meses</h3>
+      
+            <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Febre Amarela</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">12 Meses</h3>
+      
+            <h5 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) (Reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra infecções invasivas (como <span class="destaque">meningite</span>, pneumonia e otite média aguda), causadas pelos 10 sorotipos de Streptococcus pneumoniae</p><br>
+      
+            <h5 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) (Reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p><br>
+      
+            <h5 class="sub_titulo">Vacina Sarampo, Caxumba, Rubéola (Tríplice viral) (1ª dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Sarampo, Caxumba e Rubéola</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">15 Meses</h3>
+      
+            <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano e pertussis (DTP) (1º reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina poliomielite 1 e 3 (atenuada) - (VOPb) (1º reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina adsorvida Hepatite A (HA - inativada) (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Hepatite A</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina Tetra viral (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Sarampo, Caxumba, Rubéola e varicela</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">4 Anos</h3>
+      
+            <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano e pertussis (DTP) (2º reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) (Reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Febre Amarela</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina poliomielite 1 e 3 (atenuada) - (VOPb) (2º reforço)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina varicela (monovalente) - (Varicela) (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Varicela </span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">5 Anos</h3>
+      
+            <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Febre Amarela</span></p><br>
+      
+            <h5 class="sub_titulo">Vacina pneumocócica 23-valente - (Pneumo 23) (1 dose)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra infecções invasivas pelo pneumococo na população indígena</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4">
+            <h3 class="titulo_card">9 e 10 Anos</h3>
+      
+            <h5 class="sub_titulo">Vacina HPV Papilomavírus humano 6, 11, 16 e 18 (HPV4 - recombinante)</h5>
+            <h5 class="sub_titulo">Doenças evitadas:</h5>
+            <p class="mb-0">Proteção contra <span class="destaque">Papilomavírus Humano</span> 6, 11, 16 e 18. Iniciar e completar o esquema de duas doses.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Section da timeline de vacinação -->
-
-<section id="menu_calendario">
-	<div id="menu-container">
-		<ul>
-			<li class="nav-li active-nav">
-				<a href="#">Criança</a>
-			</li>
-			<li class="nav-li">
-				<a href="#">Adolescente</a>
-			</li>
-			<li class="nav-li">
-				<a href="#">Adulto e Idoso</a>
-			</li>
-			<li class="nav-li">
-				<a href="#">Gestante</a>
-			</li>
-		</ul>
-		<div id="line"></div>
-	</div>
-</section>
+</div>
 
 
 
@@ -97,7 +316,57 @@
 
 
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Conteúdo da timeline 2 -->
+    <div class="timeline" id="timelineAdolescenteContent" style="display: none;">
+      <p>Conteúdo da timeline para Adolescente</p>
+    </div>
+
+    <!-- Conteúdo da timeline 3 -->
+    <div class="timeline" id="timelineAdultoIdosoContent" style="display: none;">
+      <p>Conteúdo da timeline para Adulto e Idoso</p>
+    </div>
+  </div>
+
+  <script>
+    // Guarde a referência da timeline ativa
+    var timelineAtiva;
+  
+    function mostrarTimeline(categoria) {
+      // Esconda a timeline anteriormente ativa
+      if (timelineAtiva) {
+        timelineAtiva.style.display = 'none';
+      }
+  
+      // Mostre a seção de timeline correspondente à categoria selecionada
+      var timelineContent = document.getElementById('timeline' + categoria + 'Content');
+      if (timelineContent) {
+        timelineContent.style.display = 'block';
+        // Atualize a timeline ativa
+        timelineAtiva = timelineContent;
+      }
+    }
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
