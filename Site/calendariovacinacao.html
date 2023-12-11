@@ -56,23 +56,25 @@
          <div class="row w-100">
             <div class="col-md-7" id="mensagem">
                <h1>Vacinações</h1>
-               <p>A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis. O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando.</p>
+               <p>A vacinação é uma medida fundamental em todas as fases da vida. O Calendário Nacional de Vacinação oferece diretrizes importantes para garantir a imunização adequada.
+               </p>
                <button class="btn">
-               <a href="" class="nav-link">Visualizar Calendário</a>
+               <a href="TOPO" class="nav-link">Visualizar Calendário</a>
                </button>
             </div>
             <div class="col-md-5"></div>
          </div>
       </div>
    </section>
+
+
    <!-- Seção de Resumo -->
-   <section id="resumo">
+   <section id="resumo" >
       <div class="calendario-header">
          <div class="calendario-header__descricao">
             <p class="calendario-header__descricao__texto">
-               <b>A vacinação é a melhor maneira de proteger a criança contra doenças imunopreveníveis.</b>
-               O Calendário Nacional de Vacinação pode ajudar a descobrir quais vacinas seu filho precisa e quando. As vacinas disponibilizadas no Sistema Único de Saúde – SUS são seguras e de vital importância para proteção contra algumas doenças graves e muitas vezes fatais.
-            </p>
+               <b>A imunização é essencial para proteger diferentes faixas etárias contra doenças preveníveis.</b>
+               O Calendário Nacional de Vacinação é uma ferramenta valiosa para identificar as vacinas necessárias e seus momentos ideais. Para crianças, a vacinação é crucial. O SUS oferece vacinas seguras e fundamentais para resguardar contra doenças graves e potencialmente fatais. Adolescentes também se beneficiam da proteção proporcionada pelas vacinas. O Calendário Nacional de Vacinação orienta sobre as vacinas essenciais, disponíveis de maneira segura no SUS. Adultos e idosos precisam manter a caderneta de vacinação atualizada para garantir a proteção necessária. A adesão ao Calendário Nacional de Vacinação do Adulto e Idoso é crucial para essa atualização. A vacinação durante a gestação é uma medida vital. As vacinas recomendadas nesse período contribuem para proteger a mãe e o bebê contra doenças preveníveis.</p>
          </div>
       </div>
    </section>
@@ -111,16 +113,18 @@
   </script>
 
 <section id="menutimeline">
+   <a href=”#TOPO></a>
    <div class="centralizar">
        <div class="btn-group">
            <label class="btn btn_custom" onclick="mostrarTimeline('Crianca')" data-categoria="Crianca">Criança</label>
            <label class="btn btn_custom" onclick="mostrarTimeline('Adolescente')" data-categoria="Adolescente">Adolescente</label>
-           <label class="btn btn_custom" onclick="mostrarTimeline('Adulto e Idoso')" data-categoria="AdultoEIdoso">Adulto E Idoso</label>
+           <label class="btn btn_custom" onclick="mostrarTimeline('AdultoEIdoso')" data-categoria="AdultoEIdoso">Adulto e Idoso</label>
            <label class="btn btn_custom" onclick="mostrarTimeline('Gestante')" data-categoria="Gestante">Gestante</label>
 
        </div>
    </div>
 </section>
+
    <section>
       <div id="timelineCriancaContent" class="timelineContent"> 
          <div class="container py-5">
@@ -203,11 +207,11 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">6 Meses</h3>
-                     <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) (3ª dose)</h5>
+                     <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) <span class="normal">(3ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p>
                      <br>
-                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (3ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) <span class="normal">(3ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
                      <h3 class="sub_titulo">Vacina Influenza (1 ou 2 doses (anual))</h3>
@@ -220,7 +224,7 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">9 Meses</h3>
-                     <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Febre Amarela</span></p>
                   </div>
@@ -256,11 +260,11 @@
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
                      <br>
-                     <h5 class="sub_titulo">Vacina adsorvida Hepatite A (HA - inativada) (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina adsorvida Hepatite A (HA - inativada) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Hepatite A</span></p>
                      <br>
-                     <h5 class="sub_titulo">Vacina Tetra viral (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina Tetra viral <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Sarampo, Caxumba, Rubéola e varicela</span></p>
                   </div>
@@ -282,7 +286,7 @@
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
                      <br>
-                     <h5 class="sub_titulo">Vacina varicela (monovalente) - (Varicela) (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina varicela (monovalente) - (Varicela) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Varicela </span></p>
                   </div>
@@ -292,11 +296,11 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">5 Anos</h3>
-                     <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina Febre Amarela (atenuada) - (FA) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Febre Amarela</span></p>
                      <br>
-                     <h5 class="sub_titulo">Vacina pneumocócica 23-valente - (Pneumo 23) (1 dose)</h5>
+                     <h5 class="sub_titulo">Vacina pneumocócica 23-valente - (Pneumo 23) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra infecções invasivas pelo pneumococo na população indígena</p>
                   </div>
@@ -335,56 +339,135 @@
                <h5 class="sub_titulo">Doenças evitadas:</h5>
                <p class="mb-0">Proteção contra <span class="destaque"> Difteria</span> e <span class="destaque">Tétano</span></p><br>
 
+               <h5 class="sub_titulo">Vacina Febre Amarela (VFA - atenuada) <span class="normal"> (Dose única caso não tenha recebido nenhuma dose até os 5 anos ou reforçar, caso a pessoa tenha recebido uma dose da vacina antes de completar 5 anos de idade)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Febre Amarela</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Sarampo, Caxumba e Rubéola (Tríplice viral) <span class="normal"> (Iniciar ou completar duas doses, de acordo com a situação vacinal | Indicação a partir dos nove anos de idade)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Sarampo, Caxumba e Rubéola</span></p><br>
+
               </div>
             </div>
           </div>
           <div class="timeline right">
             <div class="card">
               <div class="card-body p-4">
-                <h3>2016</h3>
-                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                  dignissim per, habeo iusto primis ea eam.</p>
+               <h3 class="titulo_card">11 a 14 Anos</h3>
+               <h5 class="sub_titulo">Vacina HPV Papilomavírus humano 6, 11, 16 e 18 (HPV4 - recombinante)  <span class="normal">(Iniciar ou completar duas doses, de acordo com a situação vacinal | Indicação a partir dos nove anos de idade)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Papilomavírus Humano 6, 11, 16 e 18</span></p><br>
+               
+               <h5 class="sub_titulo">Vacina meningocócica ACWY (MenACWY- Conjugada) <span class="normal">(Uma dose)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Meningite meningocócica sorogrupos A, C, W e Y</span></p><br>
+
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
+   </div>
+</section>
+
+
+<!-- TIMELINE 3 - ADULTO E IDOSO -->
+<section>
+   <div id="timelineAdultoEIdosoContent" class="timelineContent">
+      <div class="container py-5">
+        <div class="main-timeline">
           <div class="timeline left">
             <div class="card">
               <div class="card-body p-4">
-                <h3>2015</h3>
-                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                  dignissim per, habeo iusto primis ea eam.</p>
+               <h3 class="titulo_card">Idade adulta - a qualquer tempo</h3>
+               <h5 class="sub_titulo">Vacina Hepatite B (HB - recombinante)  <span class="normal">(3 doses, de acordo com histórico vacinal)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Hepatite B</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Difteria e Tétano (dT) <span class="normal">(3 doses, de acordo com histórico vacinal | Reforço a cada 10 anos ou a cada 5 anos em caso de ferimentos graves)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Difteria</span> e <span class="destaque">Tétano</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Febre Amarela (VFA - atenuada) <span class="normal"> (Dose única caso não tenha recebido nenhuma dose até os 5 anos ou reforçar, caso a pessoa tenha recebido uma dose da vacina antes de completar 5 anos de idade)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Febre Amarela</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Sarampo, Caxumba e Rubéola (Tríplice viral) <span class="normal"> (Iniciar ou completar duas doses, de acordo com a situação vacinal | Indicação a partir dos nove anos de idade)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Sarampo, Caxumba e Rubéola</span></p><br>
+
               </div>
             </div>
           </div>
           <div class="timeline right">
             <div class="card">
               <div class="card-body p-4">
-                <h3>2012</h3>
-                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                  dignissim per, habeo iusto primis ea eam.</p>
+               <h3 class="titulo_card">18 Anos</h3>
+               <h5 class="sub_titulo">Vacina Difteria, Tétano, Pertussis (dTpa - acelular) <span class="normal">(Uma dose - Reforço a cada 10 anos ou 5 anos em caso de ferimentos graves | Estão recomendadas para profissionais da saúde e parteiras tradicionais.)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano e Coqueluche</span></p><br>
+               
+               <h5 class="sub_titulo">Vacina meningocócica ACWY (MenACWY- Conjugada) <span class="normal">(Uma dose)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Meningite meningocócica sorogrupos A, C, W e Y</span></p><br>
+
               </div>
             </div>
           </div>
+
           <div class="timeline left">
             <div class="card">
               <div class="card-body p-4">
-                <h3>2011</h3>
-                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                  dignissim per, habeo iusto primis ea eam.</p>
+               <h3 class="titulo_card">20 a 29 anos</h3>
+               <h5 class="sub_titulo">Vacina Tríplice viral <span class="normal">(Duas doses)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Sarampo, Caxumba e Rubéola</span></p><br>
+               
+               <h3 class="titulo_card">30 a 59 anos</h3>
+               <h5 class="sub_titulo">Vacina Tríplice viral <span class="normal">(Uma dose - Verificar situação vacinal anterior)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Sarampo, Caxumba e Rubéola</span></p><br>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+   </div>
+</section>
+
+
+<!-- TIMELINE 4 - GESTANTE-->
+
+<section>
+   <div id="timelineGestanteContent" class="timelineContent">
+      <div class="container py-5">
+        <div class="main-timeline">
+          <div class="timeline left">
+            <div class="card">
+              <div class="card-body p-4">
+               <h3 class="titulo_card">A qualquer tempo no pré-natal</h3>
+               <h5 class="sub_titulo">Vacina Hepatite B (HB - recombinante) <span class="normal">(Iniciar ou completar 3 doses, de acordo com histórico vacinal)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Hepatite B</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Difteria e Tétano (dT) <span class="normal">(Iniciar ou completar 3 doses, de acordo com histórico vacinal | Reforço a cada 10 anos ou a cada 5 anos em caso de ferimentos graves)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Difteria</span> e <span class="destaque">Tétano</span></p><br>
+    
               </div>
             </div>
           </div>
           <div class="timeline right">
             <div class="card">
               <div class="card-body p-4">
-                <h3>2007</h3>
-                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                  dignissim per, habeo iusto primis ea eam.</p>
+               <h3 class="titulo_card">20ª semana de gravidez e puérperas até 45 dias</h3>
+               <h5 class="sub_titulo">Vacina Difteria, Tétano, Pertussis (dTpa - acelular) <span class="normal">(Uma dose a cada gestação)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano e Coqueluche</span></p><br>
+
               </div>
             </div>
           </div>
@@ -392,6 +475,7 @@
       </div>
    </div>
 </section>
+
 
    <!-- rodapé -->
 <footer>
