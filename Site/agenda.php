@@ -1,16 +1,8 @@
 <?php
 
 require_once('database.php');
-<<<<<<< Updated upstream
 require_once('Especialidade.php');
 require_once('Medico.php');
-=======
-<<<<<<< HEAD
-=======
-require_once('Especialidade.php');
-require_once('Medico.php');
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
 
 class Agenda {
     private $db;
@@ -19,25 +11,11 @@ class Agenda {
         $this->db = new Database();
     }
 
-<<<<<<< Updated upstream
     public function filtrarMedicos($data, string $cidade = null, int $especialidade = null, string $nome = null) 
-=======
-<<<<<<< HEAD
-    public function listarMedicos() 
-=======
-    public function filtrarMedicos($data, string $cidade = null, int $especialidade = null, string $nome = null) 
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
     {
         try {
             $conn = $conn = $this->db->getConnection();
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-            $sql = "SELECT ID, NOME FROM MEDICOS";
-=======
->>>>>>> Stashed changes
             $sql = "SELECT M.ID, M.CRM, M.NOME, M.CIDADE, E.DESCRICAO, A.HORA_CONSULTA FROM MEDICOS M
             INNER JOIN ESPECIALIDADE E ON E.ID = M.ID_ESPECIALIDADE
             INNER JOIN AGENDAMENTOS A ON A.ID_MEDICO = M.ID";
@@ -62,10 +40,6 @@ class Agenda {
                 }
             }
 
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
@@ -76,12 +50,6 @@ class Agenda {
             foreach ($result as $row) {
                 $medico = new Medico();
                 $medico->setId($row["ID"]);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-                $medico->setName($row["Name"]);
-=======
->>>>>>> Stashed changes
                 $medico->setCRM($row["CRM"]);
                 $medico->setNome($row["NOME"]);
                 $medico->setCidade($row["CIDADE"]);
@@ -90,20 +58,11 @@ class Agenda {
                 $especialidade = $medico->getEspecialidade();
                 $especialidade->setId($row["ID_ESPECIALIDADE"]);
                 $especialidade->setDescricao($row["DESCRICAO"]);
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
 
                 $medicos[] = $medico;
             }
 
             return $medicos;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
 
         }
         catch(PDOException $e) {
@@ -143,10 +102,6 @@ class Agenda {
         } 
         catch (PDOException $e) {
             echo "". $e->getMessage();
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
         }
     }
 
@@ -173,18 +128,9 @@ class Agenda {
 
             return $especialidades;
         }
-<<<<<<< Updated upstream
         catch (PDOException $e) {
             echo "". $e->getMessage();
         }
-=======
-<<<<<<< HEAD
-=======
-        catch (PDOException $e) {
-            echo "". $e->getMessage();
-        }
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
     }
 
     public function listarCidades()
@@ -196,14 +142,7 @@ class Agenda {
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
-<<<<<<< Updated upstream
             
-=======
-<<<<<<< HEAD
-=======
-            
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $cidades = [];
@@ -215,18 +154,9 @@ class Agenda {
 
             return $cidades;
         }
-<<<<<<< Updated upstream
         catch (PDOException $e) {
             echo "". $e->getMessage();
         }
-=======
-<<<<<<< HEAD
-=======
-        catch (PDOException $e) {
-            echo "". $e->getMessage();
-        }
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
     }
 
 
