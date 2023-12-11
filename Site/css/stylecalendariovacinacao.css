@@ -8,7 +8,7 @@
   --bs-btn-bg: #086cc4;
   --bs-btn-border-color: #086cc4;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #086cc4;
+  --bs-btn-hover-bg: #2e13dc;
   --bs-btn-hover-border-color: #086cc4;
   --bs-btn-focus-shadow-rgb: 130, 138, 145;
   --bs-btn-active-color: #fff;
@@ -137,6 +137,7 @@ nav {
 #front {
   background-image: url(../img/img-calendario_vacinação/capanova.png);
   background-repeat: no-repeat;
+  background-size: cover; /* Torna a imagem de fundo responsiva */
   text-align: center;
   padding-top: 120px;
   height: 620px;
@@ -164,7 +165,7 @@ nav {
 
 .calendario-header {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
 }
 
 .calendario-header__descricao {
@@ -254,8 +255,27 @@ section#menu_calendario{
 /* opções da timeline */
 #menutimeline {
   padding-top: 2rem;
-  align-items: center;
+  display: flex;
+  justify-content: center;
   color: #FFFFFF;
+}
+
+#menutimeline .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#menutimeline .btn-group label {
+  margin: 0 10px 10px 0; /* Adiciona espaçamento entre os elementos e mantém centralizado */
+  border-bottom: 1px solid #4DC3F5;
+  transition: margin-bottom 0.3s ease, border-radius 0.3s ease;
+  border-radius: 0;
+}
+
+#menutimeline .btn-group label:hover {
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 .btn_custom { 
@@ -549,16 +569,25 @@ hr {
       max-width: 100%;
   }
 }
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
 
-}
+@media only screen and (max-width: 768px) {
+  nav {
+    height: auto;
+  }
 
-/* // X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
+  .centralizar {
+    margin-left: 0;
+    text-align: center;
+  }
 
-}
+  #front {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
 
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { 
+  .login {
+    width: 80%;
+    margin: 0 10%;
+  }
+
 }
