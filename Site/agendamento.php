@@ -1,12 +1,13 @@
 <?php
 
 require_once('agenda.php');
+require_once('sessao.php');
+
+validaAcesso("agendamento_login.html");
+
 $agenda = new Agenda();
 
-$t = $agenda->listarMedicos();
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,12 +124,13 @@ $t = $agenda->listarMedicos();
                 </div>
               </div>
               <div class="align-self-end">
-                <button class="btn-agendamento" type="submit">Buscar</button>
+                <button class="btn-agendamento" type="submit" name="submit">Buscar</button>
               </div>
 
             </div>
 
             <div class="col-md-6" id="calendario">
+              <input type="hidden" name="dataSelecionada" id="dataSelecionada" value="">
               <div class="calendar calendar-second" style="margin-top: 50px;" id="calendar_first">
                 <div class="calendar_header">
                   <button class="switch-month switch-left">
@@ -148,77 +150,87 @@ $t = $agenda->listarMedicos();
       </div>
     </form>
 
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['submit'])): ?>
 
-    <div class="container" id="medicos">
-    <h1>Médicos encontrado</h1>
-      <br>
-      <?php if (empty($medicos)): ?>
-        <h1>Nenhum médico encontrado!</h1>
-      <?php else: ?>
-        <?php foreach ($medicos as $medico): ?>
-          <div class="row card p-4" style="">
-            <table>
-              <tr>
-                <td style="width:20px">
-                  <h4>Médico:</h4>
-                </td>
-                <td>
-                  <h4>
-                    <?php echo $medico->getNome(); ?>
-                  </h4>
-                </td>
+      <div class="container" id="medicos">
+        <h1>Médicos encontrado</h1>
+        <br>
+        <?php if (empty($medicos)): ?>
+          <h1>Nenhum médico encontrado!</h1>
+        <?php else: ?>
+          <?php foreach ($medicos as $medico): ?>
+            <div class="row card p-4">
+              <table>
+                <tr>
+                  <td style="width:20px">
+                    <h4>Médico:</h4>
+                  </td>
+                  <td>
+                    <h4>
+                      <?php echo $medico->getNome(); ?>
+                    </h4>
+                  </td>
+                  <td rowspan="4" style="right">
+
+                    <div class="modal-body">
+                      <!-- Your details content goes here -->
+                      <div class="d-flex flex-wrap justify-content-center" id="agendamento-horarios">
+                        <button type="button" class="btn btn-info m-1">9:00</button>
+                        <button type="button" class="btn btn-info m-1">10:00</button>
+                        <button type="button" class="btn btn-info m-1">11:00</button>
+                        <button type="button" class="btn btn-info m-1">13:00</button>
+                        <button type="button" class="btn btn-info m-1">14:00</button>
+                        <button type="button" class="btn btn-info m-1">15:00</button>
+                        <button type="button" class="btn btn-info m-1">16:00</button>
+                        <button type="button" class="btn btn-info m-1">17:00</button>
+                      </div>
+                    </div>
+                  </td>
+                  <!--
                 <td rowspan="4" style="width:125px">
                   <a class="btn btn-primary">">Mais detalhes</a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <h4>Especialidade:</h4>
-                </td>
-                <td>
-                  <h4>
-                    <?php echo $medico->getEspecialidade()->getDescricao(); ?>
-                  </h4>
-                </td>
+                </td> -->
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Especialidade:</h4>
+                  </td>
+                  <td>
+                    <h4>
+                      <?php echo $medico->getEspecialidade()->getDescricao(); ?>
+                    </h4>
+                  </td>
 
-              </tr>
-              <tr>
-                <td>
-                  <h4>Cidade:</h4>
-                </td>
-                <td>
-                  <h4>
-                    <?php echo 'TESTE' ?>
-                  </h4>
-                </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>Cidade:</h4>
+                  </td>
+                  <td>
+                    <h4>
+                      <?php echo $medico->getCidade() ?>
+                    </h4>
+                  </td>
 
-              </tr>
-              <tr>
-                <td>
-                  <h4>CRM:</h4>
-                </td>
-                <td>
-                  <h4>
-                    <?php echo $medico->getCRM() ?>
-                  </h4>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <br>
-        <?php endforeach; ?>
-      <?php endif; ?>
-    </div>
+                </tr>
+                <tr>
+                  <td>
+                    <h4>CRM:</h4>
+                  </td>
+                  <td>
+                    <h4>
+                      <?php echo $medico->getCRM() ?>
+                    </h4>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <br>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
 
-    <?php
-
-    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-      echo "TESTE";
-
-
-    }
-
-    ?>
 
 
 

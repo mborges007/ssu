@@ -340,6 +340,14 @@ nav {
     padding-right: 50px;
   }
 
+  #agendamento-horarios {
+    width: 200px;
+  }
+
+  #agendamento-horarios button {
+    width: 80px;
+  }
+
   .btn-agendamento {
     color: white;
     background-color:#0D84C8;
@@ -502,7 +510,10 @@ nav {
     background-color: #0D84C8; }
   
   .calendar_content div.selected {
-    background-color: rgba(153, 153, 161, 0.2);
+    /*background-color: rgba(153, 153, 161, 0.2);*/
+    background-color: #0D84C8;
+    color: #fff;
+    font-size: 18px;
     /*rgba(170, 170, 176, .5) #aaaab0*/
     border: 1px solid white; }
   

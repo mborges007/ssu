@@ -2,8 +2,9 @@
 
 class Medico {
     private int $id;
-    private string $nome;
-    private string $crm;
+    private string $nome = "";
+    private string $crm = "";
+    private string $cidade = "";
     private Especialidade $especialidade;
 
 
@@ -33,6 +34,14 @@ class Medico {
 
     public function setCRM(string $crm){
         $this->crm = $crm;
+    }
+
+    public function getCidade(): string {
+        return $this->cidade;
+    }
+
+    public function setCidade(string $cidade) {
+        $this->cidade = $cidade;
     }
 
     public function getEspecialidade(): Especialidade {

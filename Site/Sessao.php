@@ -1,7 +1,5 @@
 <?php
 
-require_once('login.php');
-
 $loginFalhou = false;
     
 if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -14,10 +12,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $action = $_POST['action'];
     if ($action == "logar")
     {
+        require_once('usuario.php');
+
         session_start();
 
-        $login = new Login();
-        $logou = $login->autenticar($_POST['login'], $_POST['senha']);
+        $login = new Usuario();
+        $logou = $login->autenticar($_POST['email'], $_POST['senha']);
 
         if(empty($logou))
         {
@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $_SESSION["loggedin"] = TRUE;
             $_SESSION["id"] = $login->getUsuario();
-            header("Location: index.php");
+            header("Location: index.html");
             exit;
         }
     }
@@ -40,16 +40,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 
-function ValidaAcesso(string $tipoUsuario){
+function validaAcesso(string $redireciona = ""){
     session_start();
     
     if(!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]){
-        header("location: index.php");
+        header($redireciona != "" ? "location: $redireciona" : "index.php");
         exit;
     }
 }
 
-function VerificaSeJaEstaLogado()
+function verificaSeJaEstaLogado()
 {
     if (session_status() !== PHP_SESSION_ACTIVE){
         session_start();
@@ -62,7 +62,7 @@ function VerificaSeJaEstaLogado()
     header("location: index.php");
 }
 
-function Logout(){
+function logout(){
     $_SESSION["loggedin"] = false;
     
     unset($_SESSION["loggedin"]);

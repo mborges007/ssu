@@ -76,6 +76,7 @@ CREATE TABLE `medicos` (
   `nome` varchar(30) NOT NULL,
   `ID` int(10) NOT NULL,
   `CRM` varchar(10) NOT NULL,
+  `Cidade` VARCHAR(30) NOT NULL,
   `id_especialidade` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -83,16 +84,16 @@ CREATE TABLE `medicos` (
 -- Extraindo dados da tabela `medicos`
 --
 
-INSERT INTO `medicos` (`nome`, `ID`, `CRM`, `id_especialidade`) VALUES
-('Nelson Dimas Brambilla', 1, '42.929', 2),
-('Oswaldo Colombini Neto', 2, '108.472', 2),
-('Ana Paula Delgado', 3, '90.376', 4),
-('Bruno Appolari', 4, '151.650', 9),
-('Selma Lara Teixeira ', 5, '54.435', 4),
-('Rodrigo Dias da Costa', 6, '147.809', 2),
-('Jean Tonelli', 7, '95.053', 9),
-('Jardel Dair Filho', 8, '107.804', 4),
-('Fabio Volpon Santos', 9, '67.729', 9);
+INSERT INTO `medicos` (`nome`, `ID`, `CRM`, `Cidade`, `id_especialidade`) VALUES
+('Nelson Dimas Brambilla', 1, '42.929', 'Leme', 2),
+('Oswaldo Colombini Neto', 2, '108.472', 'Araras', 2),
+('Ana Paula Delgado', 3, '90.376', 'Araras', 4),
+('Bruno Appolari', 4, '151.650', 'Leme', 9),
+('Selma Lara Teixeira ', 5, '54.435', 'Araras', 4),
+('Rodrigo Dias da Costa', 6, '147.809', 'Leme', 2),
+('Jean Tonelli', 7, '95.053', 'Araras', 9),
+('Jardel Dair Filho', 8, '107.804', 'Araras', 4),
+('Fabio Volpon Santos', 9, '67.729', 'Araras', 9);
 
 -- --------------------------------------------------------
 
@@ -147,16 +148,16 @@ CREATE TABLE `unidades` (
 --
 
 INSERT INTO `unidades` (`endereco`, `qtde_medicos`, `telefone`, `cidade`, `ID`) VALUES
-('R. Carlos Andrade Ribeiro', 5, '(19)335-6325', 'LEME', 1),
-('Av Luiz Andrade', 8, '(35)99632-2356', 'LEME', 2),
-('Rua Ribeiro da Silva', 3, '(19)3652-9698', 'ARARAS', 3),
-('Av. Augusta Viola da Costa', 8, '(19)3586-3256', 'ARARAS', 4),
-('Rua Santos Dumont', 12, '(19)99863-2356', 'ARARAS', 5),
-('Rua Brasília', 5, '(19)3562-7536', 'LEME', 6),
-('Av. Carlos Bonfanti', 5, '(19)9632-9632', 'ARARAS', 7),
-('Rua Barão de Arary', 7, '(19)3542-9988', 'LEME', 8),
-('Rua Domingos Graziano', 10, '(19)3541-8523', 'ARARAS', 9),
-('Rua Emilio Ferreira', 10, '(19)3652-9632', 'ARARAS', 10);
+('R. Carlos Andrade Ribeiro', 5, '(19)335-6325', 'Leme', 1),
+('Av Luiz Andrade', 8, '(35)99632-2356', 'Leme', 2),
+('Rua Ribeiro da Silva', 3, '(19)3652-9698', 'Araras', 3),
+('Av. Augusta Viola da Costa', 8, '(19)3586-3256', 'Araras', 4),
+('Rua Santos Dumont', 12, '(19)99863-2356', 'Araras', 5),
+('Rua Brasília', 5, '(19)3562-7536', 'Leme', 6),
+('Av. Carlos Bonfanti', 5, '(19)9632-9632', 'Araras', 7),
+('Rua Barão de Arary', 7, '(19)3542-9988', 'Leme', 8),
+('Rua Domingos Graziano', 10, '(19)3541-8523', 'Araras', 9),
+('Rua Emilio Ferreira', 10, '(19)3652-9632', 'Araras', 10);
 
 --
 -- Índices para tabelas despejadas
