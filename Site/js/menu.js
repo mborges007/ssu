@@ -1,50 +1,30 @@
-$line = $('#line')
-$navListItem = $('.nav-li')
-$activeWidth = $('.active-nav').width()
-$firstChild = $('.nav-li:first-child')
-$defaultMarginLeft = parseInt($('.nav-li:first-child').next().css('marginLeft').replace(/\D/g, ''))
-$defaultPaddingLeft = parseInt($('#menu-container > ul').css('padding-left').replace(/\D/g, ''))
+var categoriaAtual = 'Crianca'; // Categoria inicial
+var estadoTimelines = {}; // Armazena o estado de exibição das timelines
 
-$line.width($activeWidth + 'px')
-$line.css('marginLeft', $defaultPaddingLeft + 'px')
+function mostrarTimeline(categoria) {
+  // Esconde a timeline da categoria atual
+  var timelineAtual = document.getElementById('timeline' + categoriaAtual + 'Content');
+  if (timelineAtual) {
+	estadoTimelines[categoriaAtual] = timelineAtual.style.display;
+	timelineAtual.style.display = 'none';
+  }
 
-$navListItem.click ->
-	$this = $(this)
-	$activeNav = $('.active-nav')
-	$currentWidth = $activeNav.width()
-	$currentOffset = $activeNav.position().left
-	$currentIndex = $activeNav.index()
-	$activeNav.removeClass('active-nav')
-	$this.addClass('active-nav')
+  // Mostra a timeline correspondente à nova categoria
+  var novaTimeline = document.getElementById('timeline' + categoria + 'Content');
+  if (novaTimeline) {
+	novaTimeline.style.display = estadoTimelines[categoria] || 'block';
+	categoriaAtual = categoria; // Atualiza a categoria atual
+  } else {
+	console.error('Timeline não encontrada para a categoria:', categoria);
+  }
+}
 
-	if $this.is($activeNav)
-		return 0;
+function mostrarTimeline(opcao) {
+	// Esconde todas as timelines
+	document.querySelectorAll('.timeline-content').forEach(function(timeline) {
+		timeline.style.display = 'none';
+	});
 
-	else 
-		if $this.index() > $currentIndex
-			if $activeNav.is($firstChild)
-				$initWidth = $defaultMarginLeft + $this.width() + $this.position().left - $defaultPaddingLeft
-			else
-				$initWidth = $this.position().left + $this.width() - $currentOffset
-
-			$marginLeftToSet = $this.position().left + $defaultMarginLeft + 'px'
-
-			$line.width($initWidth + 'px')
-			setTimeout( ->
-				$line.css('marginLeft', $marginLeftToSet)
-				$line.width($this.width() + 'px')
-			, 175)
-
-		else
-			if $this.is($firstChild)
-				$initWidth = $currentOffset - $defaultPaddingLeft + $defaultMarginLeft + $currentWidth
-				$marginLeftToSet = $this.position().left
-			else
-				$initWidth = $currentWidth + $currentOffset - $this.position().left
-				$marginLeftToSet = $this.position().left + $defaultMarginLeft
-
-			$line.css('marginLeft', $marginLeftToSet)
-			$line.width($initWidth + 'px')
-			setTimeout( ->
-				$line.width($this.width() + 'px')
-			, 175)
+	// Mostra a timeline correspondente à opção selecionada
+	document.getElementById('timeline' + opcao + 'Content').style.display = 'block';
+}

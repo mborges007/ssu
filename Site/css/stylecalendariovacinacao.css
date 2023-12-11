@@ -3,6 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&display=swap');
 
 
+:root {
+  --bs-btn-color: #086cc4;
+  --bs-btn-bg: #086cc4;
+  --bs-btn-border-color: #086cc4;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #086cc4;
+  --bs-btn-hover-border-color: #086cc4;
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #086cc4;
+  --bs-btn-active-border-color: #086cc4;
+  --bs-btn-active-shadow: inset 0 3px 5px #086cc4;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #086cc4;
+  --bs-btn-disabled-border-color: #086cc4;
+}
+
+
 /***** Navbar *****/
 
 nav {
@@ -233,10 +251,49 @@ section#menu_calendario{
 }
 
 /* opções da timeline */
-#menutimeline{
-    padding-top: 2rem;
-    align-items: center;
+#menutimeline {
+  padding-top: 2rem;
+  align-items: center;
+  color: #FFFFFF;
 }
+
+.btn_custom { 
+
+color: var(--bs-btn-color);
+background-color: var(--bs-btn-bg);
+border: 2px solid var(--bs-btn-border-color);
+/* Outras propriedades do botão aqui */
+
+&:hover {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+  /* Propriedades de hover do botão aqui */
+}
+
+&:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), 0.25);
+  /* Propriedades de foco do botão aqui */
+}
+
+&:active {
+  color: var(--bs-btn-active-color);
+  background-color: var(--bs-btn-active-bg);
+  border-color: var(--bs-btn-active-border-color);
+  box-shadow: var(--bs-btn-active-shadow);
+  /* Propriedades de clique do botão aqui */
+}
+
+&:disabled {
+  color: var(--bs-btn-disabled-color);
+  background-color: var(--bs-btn-disabled-bg);
+  border-color: var(--bs-btn-disabled-border-color);
+  /* Propriedades de botão desativado aqui */
+}
+}
+
+
+
 
 #conteudo {
     display: block;
@@ -350,6 +407,11 @@ section#menu_calendario{
   }
   .sub_titulo{
     font-size: 15px;
+  }
+
+  .normal{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: lighter;
   }
 
   .destaque{

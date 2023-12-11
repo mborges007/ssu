@@ -49,6 +49,7 @@
         </div>
       </nav>
     </header>
+
    <!-- Pagina de apresentação -->
    <section id="front">
       <div class="CalendarioVacinacao">
@@ -75,55 +76,64 @@
          </div>
       </div>
    </section>
-   <section id="menutimeline">
-      <div class="centralizar">
-         <div class="btn-group">
-            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked />
-            <label class="btn btn-secondary" for="option1" onclick="mostrarTimeline('Crianca')">Criança</label>
-            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
-            <label class="btn btn-secondary" for="option2" onclick="mostrarTimeline('Adolescente')">Adolescente</label>
-            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
-            <label class="btn btn-secondary" for="option3" onclick="mostrarTimeline('AdultoIdoso')">Adulto e Idoso</label>
-            <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" />
-            <label class="btn btn-secondary" for="option4" onclick="mostrarTimeline('Gestante')">Gestante</label>
-         </div>
-      </div>
-   </section>
+
    <script>
       var categoriaAtual = 'Crianca'; // Categoria inicial
       var estadoTimelines = {}; // Armazena o estado de exibição das timelines
-      
+
       function mostrarTimeline(categoria) {
-        // Esconde a timeline da categoria atual
-        var timelineAtual = document.getElementById('timeline' + categoriaAtual + 'Content');
-        if (timelineAtual) {
-          estadoTimelines[categoriaAtual] = timelineAtual.style.display;
-          timelineAtual.style.display = 'none';
-        }
-      
-        // Mostra a timeline correspondente à nova categoria
-        var novaTimeline = document.getElementById('timeline' + categoria + 'Content');
-        if (novaTimeline) {
-          novaTimeline.style.display = estadoTimelines[categoria] || 'block';
-          categoriaAtual = categoria; // Atualiza a categoria atual
-        } else {
-          console.error('Timeline não encontrada para a categoria:', categoria);
-        }
+          // Esconde a timeline da categoria atual, se existir
+          var timelineAtual = document.getElementById('timeline' + categoriaAtual + 'Content');
+          if (timelineAtual) {
+              estadoTimelines[categoriaAtual] = timelineAtual.style.display;
+              timelineAtual.style.display = 'none';
+          }
+
+          // Mostra a timeline correspondente à nova categoria, se existir
+          var novaTimeline = document.getElementById('timeline' + categoria + 'Content');
+          if (novaTimeline) {
+              novaTimeline.style.display = estadoTimelines[categoria] || 'block';
+              categoriaAtual = categoria; // Atualiza a categoria atual
+          } else {
+              console.error('Timeline não encontrada para a categoria:', categoria);
+          }
       }
-        
-   </script>
-   <div id="timelineCriancaContent">
-      <div class="container py-5">
+
+      // Hide timelines that are not selected by default
+      document.addEventListener('DOMContentLoaded', function () {
+          var timelines = document.querySelectorAll('.timelineContent');
+          timelines.forEach(function (timeline) {
+              if (timeline.id !== 'timelineCriancaContent') {
+                  timeline.style.display = 'none';
+              }
+          });
+      });
+  </script>
+
+<section id="menutimeline">
+   <div class="centralizar">
+       <div class="btn-group">
+           <label class="btn btn_custom" onclick="mostrarTimeline('Crianca')" data-categoria="Crianca">Criança</label>
+           <label class="btn btn_custom" onclick="mostrarTimeline('Adolescente')" data-categoria="Adolescente">Adolescente</label>
+           <label class="btn btn_custom" onclick="mostrarTimeline('Adulto e Idoso')" data-categoria="AdultoEIdoso">Adulto E Idoso</label>
+           <label class="btn btn_custom" onclick="mostrarTimeline('Gestante')" data-categoria="Gestante">Gestante</label>
+
+       </div>
+   </div>
+</section>
+   <section>
+      <div id="timelineCriancaContent" class="timelineContent"> 
+         <div class="container py-5">
          <div class="main-timeline">
             <div class="timeline left">
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">Ao Nascer</h3>
-                     <h5 class="sub_titulo">Vacina BCG (Dose única)</h5>
+                     <h5 class="sub_titulo">Vacina BCG <span class="normal">(Dose única)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra formas graves da <span class="destaque">tuberculose</span>(miliar e meníngea)</p>
                      <br>
-                     <h5 class="sub_titulo">Vacina Hepatite B (recombinante HB)</h5>
+                     <h5 class="sub_titulo">Vacina Hepatite B (Recombinante HB)</h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Hepatite B</span></p>
                   </div>
@@ -137,13 +147,13 @@
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p>
                      <br>
-                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (1ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) <span class="normal">(1ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção conta <span class="destaque">Poliomelite</span></p>
-                     <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) (1ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) <span class="normal">(1ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="m-0">Proteção contra infecções invasivas (como <span class="destaque">meningite</span> e pneumonia) e otite média aguda, causada pelos 10 sorotipos de Streptococus pneumoniae</p>
-                     <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) (1ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) <span class="normal">(1ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas: </h5>
                      <p class="m-0">Proteção contra diarreia por <span class="destaque">rotavírus</span> (Gastroenterites)</p>
                   </div>
@@ -153,7 +163,7 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">3 Meses</h3>
-                     <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) (1ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) <span class="normal">(1ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção conta <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p>
                   </div>
@@ -163,17 +173,17 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">4 Meses</h3>
-                     <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) (2ª dose)</h5>
+                     <h5 class="sub_titulo">Vacina adsorvida Difteria, Tétano, Pertussis, Hepatite B (recombinante) e Haemophilus influenzae B (conjugada) - (Penta) <span class="normal">(2ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Difteria, Tétano, Coqueluche, Hepatite B</span> e infecções causadas pelo Haemophilus influenzae B</p>
                      <br>
-                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) (2ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina poliomielite 1, 2 e 3 (inativada) - (VIP) <span class="normal">(2ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Poliomielite</span></p>
-                     <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) (2ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina pneumocócica 10-valente (Conjugada) - (Pneumo 10) <span class="normal">(2ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="m-0">Proteção contra infecções invasivas (como <span class="destaque">meningite</span> e pneumonia) e otite média aguda, causada pelos 10 sorotipos de Streptococus pneumoniae</p>
-                     <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) (2ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina rotavírus humano G1P1 [8] (atenuada) - (VRH) <span class="normal">(2ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas: </h5>
                      <p class="m-0">Proteção contra diarreia por <span class="destaque">rotavírus</span> (Gastroenterites)</p>
                   </div>
@@ -183,7 +193,7 @@
                <div class="card">
                   <div class="card-body p-4">
                      <h3 class="titulo_card">5 Meses</h3>
-                     <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) (2ª dose)</h3>
+                     <h3 class="sub_titulo">Vacina meningocócica C (conjugada) - (Meningo C) <span class="normal">(2ª dose)</span></h3>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção conta <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p>
                   </div>
@@ -228,7 +238,7 @@
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">doença invasiva</span> causada pela Neisseria meningitidis do sorogrupo C</p>
                      <br>
-                     <h5 class="sub_titulo">Vacina Sarampo, Caxumba, Rubéola (Tríplice viral) (1ª dose)</h5>
+                     <h5 class="sub_titulo">Vacina Sarampo, Caxumba, Rubéola (Tríplice viral) <span class="normal">(1ª dose)</span></h5>
                      <h5 class="sub_titulo">Doenças evitadas:</h5>
                      <p class="mb-0">Proteção contra <span class="destaque">Sarampo, Caxumba e Rubéola</span></p>
                   </div>
@@ -305,24 +315,83 @@
          </div>
       </div>
    </div>
-   <!-- Conteúdo da timeline 2 -->
-   <div class="timeline" id="timelineAdolescenteContent">
+</section>
+
+
+<!-- TIMELINE 2 - Adolescente -->
+<section>
+   <div id="timelineAdolescenteContent" class="timelineContent">
       <div class="container py-5">
-         <div class="main-timeline">
-            <div class="timeline left">
-               <div class="card">
-                  <div class="card-body p-4">
-                     <h3>2017</h3>
-                     <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
-                        mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
-                        dignissim per, habeo iusto primis ea eam.
-                     </p>
-                  </div>
-               </div>
+        <div class="main-timeline">
+          <div class="timeline left">
+            <div class="card">
+              <div class="card-body p-4">
+               <h3 class="titulo_card">A qualquer tempo</h3>
+               <h5 class="sub_titulo">Vacina Hepatite B recombinante (HB) <span class="normal">(Iniciar ou completar 3 doses, de acordo com situação vacinal)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque">Hepatite B</span></p><br>
+
+               <h5 class="sub_titulo">Vacina Difteria e Tétano (dT) <span class="normal">(Iniciar ou completar 3 doses, de acordo com situação vacinal | Reforço a cada 10 anos ou a cada 5 anos em caso de ferimentos graves)</span></h5>
+               <h5 class="sub_titulo">Doenças evitadas:</h5>
+               <p class="mb-0">Proteção contra <span class="destaque"> Difteria</span> e <span class="destaque">Tétano</span></p><br>
+
+              </div>
             </div>
-         </div>
+          </div>
+          <div class="timeline right">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3>2016</h3>
+                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                  dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline left">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3>2015</h3>
+                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                  dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline right">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3>2012</h3>
+                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                  dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline left">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3>2011</h3>
+                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                  dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+          </div>
+          <div class="timeline right">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3>2007</h3>
+                <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                  mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                  dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
    </div>
+</section>
 
    <!-- rodapé -->
 <footer>
