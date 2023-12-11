@@ -172,28 +172,23 @@ nav {
     margin-bottom: 100px;
 }
 
-#introducao .text {
-    padding-top: 10%;
-    margin-bottom: 30px;
+#introducao #mensagem {
     text-align: center;
+    padding-top: 130px;
 }
 
-#introducao .text h2 {
+#introducao #mensagem h2 {
     color:rgb(2, 57, 80);
     font-family: 'Lexend', sans-serif;
     font-weight: 790;
-    margin-bottom: 20px;
 }
 
-#introducao .text p {
+#introducao #mensagem p {
     font-size: 18px;
     color: #318de4;
     font-weight: 500;
 }
 
-#introducao #mensagem {
-    margin-bottom: 100px;
-}
 
 #introducao .col-md-3 {
     padding: 23px;
@@ -204,7 +199,12 @@ nav {
     margin-bottom: 40px;
 }
 
-#introducao .cards p {
+#introducao #cards{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#introducao #cards p {
     text-align: justify;
 }
 
@@ -216,7 +216,7 @@ nav {
     background-color: #cae9f5;
     height: 100%;
     padding: 30px 80px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 #busca .form-select{
@@ -259,11 +259,40 @@ nav {
 
 
 
+
+/****** carrossel ******/
+
+#carrossel {
+    margin-bottom: 150px;
+}
+
+#carrossel h1 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+/****** carrossel *****/
+
+#carrossel h5{
+    color: black;
+}
+
+#carrossel p{
+    color: black;
+}
+
+
 /***** perguntas frequentes *****/
 
 #perguntas {
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 #perguntas h1 {
@@ -289,21 +318,148 @@ nav {
     padding: 8px 16px;
 }
 
+#perguntas .bi-custom {
+    color: #555;
+    position: static; 
+    float: right;
+}
 
-#mensagem .card {
+
+
+
+/******** sobre ******/
+
+#sobre {
+    margin-bottom: 180px;
+}
+
+#sobre h1 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+    margin-bottom: 50px;
+}
+
+#sobre p {
+    font-size: 20px;
+    color: #062a3b;
+    padding-right: 50px;
+    
+}
+
+#sobre span {
+    color: #162b74;
+    font-weight: 500;
+}
+
+
+/****** contato ****/
+
+#contato {
+    margin-bottom: 100px;
+}
+
+#contato .card {
     padding: 20px;
 }
 
-#mensagem .card .btn {
+#contato .card .btn {
     color: white;
     background-color:rgb(71, 179, 246);
     height: 40px;
     margin-top: 15px;
 }
 
-#mensagem .card .btn:hover {
+#contato .card .btn:hover {
     background-color: rgb(0, 77, 110);
 }
+
+
+
+
+/* Rodapé
+-----------------------------*/
+
+footer {
+    background: rgb(2, 57, 80);
+    padding: 35px;
+    position: relative;
+    font-family:'Roboto', sans-serif; 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .7), 0 2px 8px 0 rgba(0, 0, 0, .5), 0 1px 5px 0 rgba(0, 0, 0, .1);
+}
+
+footer h4 {
+    color: white;
+    font-size: 20px;
+    margin: 0 20px;
+    text-transform: uppercase;
+    font-family:'Roboto', sans-serif;
+}
+
+footer h4:hover {
+    color:#318de4; 
+}
+
+footer .navbar-nav i{
+    text-align: justify;
+}
+
+footer .navbar-nav a{
+    color:#d4d4d4; 
+    font-weight: 25px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer .navbar-nav a:hover{
+    color:#318de4; 
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer ul li{
+    float: right;
+    margin: 0 20px;
+    padding-top: 10px;
+}
+
+footer p span {
+    color: #acacac; 
+}
+
+.social-media {
+    display: inline-block;     
+}
+
+.social-media i {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    margin: 10px 3px;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+    background-color: rgb(71, 179, 246);
+    border-radius: 50%;
+    color: white;
+}
+.social-media i:hover {
+    transform: scale(1.2);
+}
+
+hr {
+    margin: 80px 20px;
+}
+
+#politicas {
+    margin-top: 90px;
+}
+
+
 
 
 
@@ -416,6 +572,7 @@ nav {
     transform: translateY(-50%);
   }
   
+
   #filtros input {
         width: 90%;
         border: none;
