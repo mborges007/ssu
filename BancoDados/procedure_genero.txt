@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 delimiter $$
 Drop procedure if exists genero_paciente $$
 Create procedure genero_paciente (IN genero CHAR)
@@ -15,4 +16,23 @@ END $$
 
 delimiter;
 
+=======
+delimiter $$
+Drop procedure if exists genero_paciente $$
+Create procedure genero_paciente (IN genero CHAR)
+begin
+	if genero = "m" then
+			SELECT * FROM pacientes WHERE sexo = "m";
+		else
+		if genero = "f" then
+				SELECT * FROM pacientes WHERE sexo = "f";
+		else
+				SELECT * FROM pacientes;
+			END if;
+		END if;		
+END $$
+
+delimiter;
+
+>>>>>>> Stashed changes
 CALL genero_paciente ("f")

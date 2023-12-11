@@ -72,11 +72,11 @@
 <!-- Introdução -->
 <section id="introducao">
   <div class="container">
-    <div class="row" id="mensagem">
+    <div class="row">
       <div class="col-md-6">
         <img src="./img/pessoa_localizacao.svg" width="80%">
       </div>
-      <div class="col-md-6 text">
+      <div class="col-md-6" id="mensagem">
         <h2>Encontre todas as ferramentas que você precisa para realizar seus agendamentos em qualquer unidade de saúde pública da sua região.</h2>
         <p>Comece solicitando seu agendamento agora mesmo!</p>
       </div>
@@ -130,7 +130,7 @@
       </div>
       <div class="col-md-3">
         <div class="card" style="width: 17rem;">
-          <img src="./img/localizar_unidade.jpg" width="96%">
+          <img src="./img/localizar_unidade.png" width="100%">
           <div class="card-body">
             <h5 class="card-title">Localizar Unidade</h5>
           </div>
@@ -140,35 +140,50 @@
   </div>
 </section>
 
-<!-- carrossel -->
-<div class="container" id="carrosel">
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="./img/fundo.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="./img/fundo.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/fundo.jpg" class="d-block w-100" alt="...">
+<section id="carrossel">
+  <div class="container">
+    <h1>NOTÍCIAS</h1>
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/campanha-vacinação.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Nova campanha de vacina: H1N1</h5>
+            <p>Na última sexta-feira (08/12), se iniciou a campanha da H1N1 para grupos de risco, idosos, crianças e gestantes. Aproveite e vacine-se já!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/CASOS-COVID.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Aumento de casos de Covid em 2023</h5>
+            <p>Alerta! Vem subindo significativamente os casos de Covid em 2023. Não se esqueça de renovar suas doses!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./img/Novo-hospital-azul.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Nova unidade de saúde pública em Araras-SP</h5>
+            <p>Em parceria com a Santa Casa, foi inaugurado um novo hospital público para casos clínicos e exames.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
-
-<!-- Sobre nós -->
-<section id="sobre">
-
 </section>
+
 
 <!-- Perguntas frequentes -->
 <section id="perguntas">
@@ -176,65 +191,74 @@
     <div class="row">
       <div class="col-md-12">
         <h1>PERGUNTAS FREQUENTES</h1>
-        <div class="">
-          <div class="card-header" id="headingOne">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta1" aria-expanded="false" aria-controls="#pergunta1">
-              Eu pago pelo agendamento?
-            </button>
-          </div>
-          <div class="collapse" id="pergunta1" aria-labelledby="headingOne" data-parent="perguntas">
-            <div class="card-body">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
+        <div class="card-header" id="headingOne">
+          <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta1" aria-expanded="false" aria-controls="#pergunta1">
+            Eu pago pelo agendamento? <!--<i class="bi bi-chevron-down bi-custom"></i>-->
+          </button>
+        </div>
+        <div class="collapse" id="pergunta1" aria-labelledby="headingOne" data-parent="perguntas">
+          <div class="card-body">
+            Não! O agendamento das cosultas são 100% gratuítos. 
           </div>
         </div>
-
-        <div class="">
-          <div class="card-header" id="headingTwo">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta2" aria-expanded="false" aria-controls="#pergunta2">
-              Quais informações preciso fornecer para realizar o agendamento?
-            </button>
-          </div>
-          <div class="collapse" id="pergunta2" aria-labelledby="headingTwo" data-parent="perguntas">
-            <div class="card-body">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
+        <div class="card-header" id="headingTwo">
+          <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta2" aria-expanded="false" aria-controls="#pergunta2">
+            Quais informações preciso fornecer para realizar o agendamento? <!--<i class="bi bi-chevron-down bi-custom"></i>-->
+          </button>
+        </div>
+        <div class="collapse" id="pergunta2" aria-labelledby="headingTwo" data-parent="perguntas">
+          <div class="card-body">
+            Nome completo, CPF, Telefone, Data de nascimento, Sexo e E-mail. Entretanto, no dia do atendimento não se esqueça de comprovar sua identidade com um documento com foto e cartão do SUS. 
           </div>
         </div>
-
-        <div class="">
-          <div class="card-header" id="headingThree">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta3" aria-expanded="false" aria-controls="#pergunta3">
-              É seguro marcar um agendamento online?
-            </button>
-          </div>
-          <div class="collapse" id="pergunta3" aria-labelledby="headingThree" data-parent="perguntas">
-            <div class="card-body">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
+        <div class="card-header" id="headingThree">
+          <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta3" aria-expanded="false" aria-controls="#pergunta3">
+            É seguro marcar um agendamento online? <!--<i class="bi bi-chevron-down bi-custom"></i>-->
+          </button>
+        </div>
+        <div class="collapse" id="pergunta3" aria-labelledby="headingThree" data-parent="perguntas">
+          <div class="card-body">
+            Sim, é extremamente seguro! Possuímos diversas proteções internas que garentem a segurança dos dados obtidos.
           </div>
         </div>
-
-        <div class="">
-          <div class="card-header" id="headingFour">
-            <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta4" aria-expanded="false" aria-controls="#pergunta4">
-              Posso marcar consultas para alguém da minha família?
-            </button>
-          </div>
-          <div class="collapse" id="pergunta4" aria-labelledby="headingFour" data-parent="Perguntas">
-            <div class="card-body">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
+        <div class="card-header" id="headingFour">
+          <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta4" aria-expanded="false" aria-controls="#pergunta4">
+            Posso marcar consultas para alguém da minha família? <!--<i class="bi bi-chevron-down bi-custom"></i>-->
+          </button>
+        </div>
+        <div class="collapse" id="pergunta4" aria-labelledby="headingFour" data-parent="Perguntas">
+          <div class="card-body">
+            Pode sim, desde que os dados do familiar sejam inseridos. 
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
+
+ <!-- Sobre nós --> 
+ <section id="sobre">
+  <div class="container">
+    <div class="row">
+      <h1>SOBRE NÓS</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>"Somos uma equipe dedicada a simplificar o agendamento de consultas em unidades de saúde pública, tornando a jornada do paciente transparente e eficiente. </p>
+        <p>"Nosso propósito é construir pontes entre a comunidade e os serviços de saúde, utilizando a tecnologia para proporcionar a todos um acesso descomplicado à saúde. Ao escolher nosso sistema, você se junta a nós na busca por um acesso mais fácil e equitativo à saúde".</p>
+        <p>"Agradecemos por fazer parte da nossa comunidade comprometida com o bem-estar de todos".</p>
+        <p><span>- Equipe SSU.</span></p>
+      </div>
+      <div class="col-md-6">
+        <img src="./img/equipe ssu.jpg" class="w-100">
+      </div>  
+    </div>
+  </div>
+</section>
+
 <!-- mensagem -->
-<section id="mensagem">
+<section id="contato">
   <div class="container">
     <h6>Gostaria de deixar sujestões ou realizar uma pergunta? Insira as informações abaixo:</h6>
     <p><span>* Todas as respostas serão encaminhadas via E-mail *</span></p>
@@ -252,6 +276,57 @@
   </div>
   </div>
 </section>
+
+
+
+<!-- rodapé -->
+<footer>
+  <div class="">
+    <div class="row">
+      <div class="col-md-3">
+        <h4>Contatos</h4>
+        <ul class="navbar-nav">
+          <li><a href="">Telefone: (19) 9999-9999</a></li>
+          <li><a href="">Endereço: Rua Fatec Araras, N° 833, José Ometto II, Araras/SP</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h4>Sobre nós</h4>
+        <ul class="navbar-nav">
+          <li><a href="">Nossa história</a></li>
+          <li><a href="">Atendimento ao paciente</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h4>Links úteis</h4>
+        <ul class="navbar-nav">
+          <li><a href="">#</a></li>
+          <li><a href="">#</a></li>
+          <li><a href="">#</a></li>
+        </ul>
+      </div> 
+
+      <div class="col-md-3">
+        <h4>Midias sociais</h4>
+        <ul class="social-media">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-twitter"></i>   
+        </ul>
+      </div>
+    </div>
+  </div>
+<hr>
+  <div class="container"> 
+    <div id="politicas">
+      <div class="row">
+        <p class="text-dark-emphasis text-copyright"><span>© 2023 SSU 2° Semestre. Todos os direitos reservados.</span></p>
+      </div>
+    </div>
+  </div> 
+</footer>
 
 
 <!--
