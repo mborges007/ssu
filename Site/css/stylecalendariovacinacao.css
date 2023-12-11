@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&display=swap');
-=======
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2? family= Lexend:wght@900 & display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@900&display=swap');
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
+
 
 /***** Navbar *****/
 
@@ -37,16 +32,6 @@ nav {
     border: 2px solid;
     box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
 }
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
 /***** Login e cadastro *****/
 
 .login {
@@ -120,15 +105,6 @@ nav {
 .esq:hover {
     color: rgb(0, 77, 110);
 }
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
 /* cadastro */
 #cadastro .acessar-n{
     margin-left: 10px;
@@ -140,39 +116,19 @@ nav {
 
 
 /***** Front - página principal ****/
-
 #front {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-    background-image: url(../img/img-calendario_vacinação/Vacinação1.png);
-    text-align: center;
-    padding-top: 120px;
-    height: 750px;
-=======
->>>>>>> Stashed changes
-    background-image: url(../img/img-calendario_vacinação/capa.png);
-    text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 3rem;
-    /* height: 750px; */
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
+  background-image: url(../img/img-calendario_vacinação/capanova.png);
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 120px;
+  height: 620px;
 }
 
 #front h1 {
     font-family: 'Gabarito', sans-serif;
-<<<<<<< Updated upstream
     color:#ffffff;
-=======
-<<<<<<< HEAD
     color:#071820;
-=======
     color:#ffffff;
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -180,12 +136,7 @@ nav {
 #front p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     color: #727272;
-=======
->>>>>>> Stashed changes
     color: #ffffff;
 }
 
@@ -206,10 +157,6 @@ nav {
     box-shadow: 5px 5px 10px  #000000;
     padding: 1em;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.12157);
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
 }
 
 #front #mensagem {
@@ -230,10 +177,6 @@ nav {
 #front .btn:hover {
     background-color:  rgb(0, 77, 110);
 }
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 /* Menu calendário */
 
 section#menu_calendario{
@@ -288,8 +231,7 @@ section#menu_calendario{
 		color: #212121;
 	}
 }
-=======
->>>>>>> Stashed changes
+
 /* opções da timeline */
 #menutimeline{
     padding-top: 2rem;
@@ -455,6 +397,90 @@ section#menu_calendario{
 }
 
 
+/* Rodapé
+-----------------------------*/
+
+footer {
+  background: rgb(2, 57, 80);
+  padding: 35px;
+  position: relative;
+  font-family:'Roboto', sans-serif; 
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .7), 0 2px 8px 0 rgba(0, 0, 0, .5), 0 1px 5px 0 rgba(0, 0, 0, .1);
+}
+
+footer h4 {
+  color: white;
+  font-size: 20px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-family:'Roboto', sans-serif;
+}
+
+footer h4:hover {
+  color:#318de4; 
+}
+
+footer .navbar-nav i{
+  text-align: justify;
+}
+
+footer .navbar-nav a{
+  color:#d4d4d4; 
+  font-weight: 25px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+footer .navbar-nav a:hover{
+  color:#318de4; 
+}
+
+footer ul li{
+  list-style: none;
+}
+
+footer ul li{
+  float: right;
+  margin: 0 20px;
+  padding-top: 10px;
+}
+
+footer p span {
+  color: #acacac; 
+}
+
+.social-media {
+  display: inline-block;     
+}
+
+.social-media i {
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  margin: 10px 3px;
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+  background-color: rgb(71, 179, 246);
+  border-radius: 50%;
+  color: white;
+}
+.social-media i:hover {
+  transform: scale(1.2);
+}
+
+hr {
+  margin: 80px 20px;
+}
+
+#politicas {
+  margin-top: 90px;
+}
+
+
+
 @media (max-width: 576px) {
   .card {
       max-width: 100%;
@@ -472,10 +498,4 @@ section#menu_calendario{
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) { 
-
-<<<<<<< Updated upstream
- }
-=======
- }
->>>>>>> 48a5a95b014a2b56cfc8e28ed88c8027bbddca61
->>>>>>> Stashed changes
+}
