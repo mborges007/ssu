@@ -109,7 +109,7 @@ BEGIN
     SELECT id_unidade INTO unidade FROM medicos WHERE ID = p_id_medico;
 
     -- Insere o agendamento na tabela
-    INSERT INTO agendamentos (data_consulta, id_medico, id_paciente, hora_consulta, id_unidade)
+    INSERT INTO agendamento (data_consulta, id_medico, id_paciente, hora_consulta, id_unidade)
     VALUES (p_data_consulta, p_id_medico, p_id_paciente, p_hora_consulta, unidade);
 
     -- Obtém o ID do agendamento recém-criado
