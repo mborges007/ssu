@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2? family= Lexend:wght@900 & display=swap');
+
+/***** Navbar *****/
+
+nav {
+    height: 100px;
+    box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+    background-color: white;
+    text-align: center;
+}
+
+.navbar li a {
+    color: rgb(0, 77, 110);
+}
+
+.navbar li a:hover {
+    color:rgb(0, 179, 255);
+}
+
+.btn-nav {
+    background-color: white;
+    color: rgba(218, 224, 230, 0.582);
+    border: 2px solid rgba(218, 224, 230, 0.582);
+    border-radius: 50px;
+    float: right;
+}
+
+.btn-nav:hover {
+    border: 2px solid;
+    box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+}
+
+
+/***** Login e cadastro *****/
+
+.login {
+    box-shadow: 0 2px 30px 0 rgba(218,224,230,.5);
+    background-color: white;
+    width: 60%;
+    display: inline-block;
+    margin: 0 18%;
+
+}
+
+.login .btn {
+    width: 100%;
+    margin: 40px 0;
+    background-color: rgb(0, 179, 255);
+    color: rgb(255, 255, 255);
+}
+
+.login .btn:hover {
+    background-color: rgb(0, 77, 110);
+    color: white;
+}
+
+.login h2 {
+    color: rgba(57, 57, 55, 0.851);
+    padding-top: 50px;
+    text-align: center;
+}
+
+.form .row {
+    margin: 30px 50px;
+}
+
+.acessar-p {
+    text-align: center;
+    font-size: 20px;
+    padding: 23px;
+    color: rgb(71, 179, 246);
+    text-decoration: none;
+    box-shadow: 0 2px 30px 0 rgba(218,224,230,.5);
+
+}
+.acessar-n {
+    text-align: center;
+    font-size: 20px;
+    padding: 22px 0;
+    color: rgba(90, 86, 86, 0.942);
+    text-decoration: none;
+    background-color: rgba(126, 126, 126, 0.168);
+    box-shadow: 0 2px 30px 0 rgba(218,224,230,.5);
+
+}
+
+
+
+/* login */
+#login .acessar-p{
+    margin-left: 10px;
+}
+
+#login .acessar-n{
+    width: 47%;
+}
+
+.esq {
+    text-align: center;
+    text-decoration: none;
+    margin: 50px 50px;
+}
+
+.esq:hover {
+    color: rgb(0, 77, 110);
+}
+
+
+
+/* cadastro */
+#cadastro .acessar-n{
+    margin-left: 10px;
+}
+
+#cadastro .acessar-p{
+    width: 47%;
+}
+
+
+
+/* Usuário */
+body{
+    background: #f7f7ff;
+    margin-top:20px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+.me-2 {
+    margin-right: .5rem!important;
+}
+.USUARIO{
+    padding: 15rem
+}
