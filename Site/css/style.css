@@ -128,7 +128,9 @@ nav {
     text-align: center;
     padding-top: 120px;
     height: 750px;
+    object-fit: cover;
 }
+
 
 #front h1 {
     font-family: 'Gabarito', sans-serif;
@@ -788,4 +790,12 @@ hr {
     #front svg {
         display: none;
     }
+}
+
+
+@media (min-width: 1440px) {
+   #front{
+    margin-left: 8%;
+    
+   }
 }
