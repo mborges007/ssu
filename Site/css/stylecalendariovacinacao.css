@@ -138,9 +138,11 @@ nav {
   background-image: url(../img/img-calendario_vacinação/capanova.png);
   background-repeat: no-repeat;
   background-size: cover; /* Torna a imagem de fundo responsiva */
+  background-position: center;
   text-align: center;
   padding-top: 120px;
   height: 620px;
+  margin-top: 4rem;
 }
 
 #front h1 {
@@ -166,6 +168,8 @@ nav {
 .calendario-header {
     padding-top: 5rem;
     padding-bottom: 1rem;
+    width: 85%;
+    margin-left: 8%;
 }
 
 .calendario-header__descricao {
@@ -272,7 +276,8 @@ border: 2px solid var(--bs-btn-border-color);
 }
 
 .centralizar{
-    margin-left: 30rem;
+   width:70% ; 
+   margin-left: 15.7%;
 }
 
 #menu_linhatempo{
