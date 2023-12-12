@@ -45,7 +45,7 @@ function validaAcesso(string $redireciona = ""){
     session_start();
     
     if(!isset($_SESSION["loggedin"]) || !$_SESSION["loggedin"]){
-        header($redireciona != "" ? "location: $redireciona" : "index.php");
+        header($redireciona != "" ? "location: $redireciona" : "index.html");
         exit;
     }
 }
@@ -60,7 +60,7 @@ function verificaSeJaEstaLogado()
         return;
     }
 
-    header("location: index.php");
+    header("location: index.html");
 }
 
 function logout(){
@@ -69,7 +69,7 @@ function logout(){
     unset($_SESSION["loggedin"]);
     unset($_SESSION["id"]);
 
-    header("Location: index.php");
+    header("Location: index.html");
 }
 
 ?>

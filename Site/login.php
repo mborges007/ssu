@@ -3,10 +3,7 @@
 require_once('sessao.php');
 require_once('usuario.php');
 
-if (verificaSeJaEstaLogado())
-{
-    header("location: index.php");
-}
+
 ?>
 
 

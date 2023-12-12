@@ -1,3 +1,17 @@
+<?php
+
+require_once('sessao.php');
+
+validaAcesso("login.php");
+require_once('usuario.php');
+
+$user = new Usuario();
+
+$id_paciente = $_SESSION["id"];
+$perfil = $user->Perfil($id_paciente);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -28,7 +42,7 @@
     <header>
         <nav class="navbar navbar-expand-md fixed-top">
           <div class="container">
-            <a href="index.php"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
+            <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
      
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
               <i class="bi bi-list bi-color"></i>
@@ -54,7 +68,7 @@
                 <li class="nav-item">
                   <button class="btn-nav">
                     <a href="logout.php" class="nav-link">
-                      <i class="https://icons8.com.br/icon/2444/sair"></i> Sair<?php echo $nomeUsuario; ?>
+                      <i class="https://icons8.com.br/icon/2444/sair"></i> Sair
                     </a>
                   </button>
                 </li>
@@ -91,7 +105,7 @@
                                     <h6 class="mb-0">Nome</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="Equipe SSU">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['nome']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -99,7 +113,7 @@
                                     <h6 class="mb-0">CPF</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="123.456.789.10">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['cpf']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -107,7 +121,7 @@
                                     <h6 class="mb-0">Data Nascimento</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="08/11/1999">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['data_nasc']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -115,7 +129,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="ssu@example.com.br">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['email']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -123,7 +137,7 @@
                                     <h6 class="mb-0">Celular</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="(19) 99659-5529">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['telefone']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -131,7 +145,7 @@
                                     <h6 class="mb-0">Endereço</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="Jardim Jose Ometto II">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['endereco']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -139,7 +153,7 @@
                                     <h6 class="mb-0">Bairro</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="Jose Ometto II">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['bairro']; ?>">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -147,7 +161,7 @@
                                     <h6 class="mb-0">N°</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="890">
+                                    <input type="text" class="form-control" value="<?php echo $perfil['numero']; ?>">
                                 </div>
                             </div>
 

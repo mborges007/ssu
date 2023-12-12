@@ -33,6 +33,24 @@ class Usuario {
         }
     }
 
+    public function Perfil($idPaciente)
+    {
+        try {
+
+            $conn = $this->db->getConnection();
+
+            $sql = "SELECT * FROM PACIENTES where registro = $idPaciente";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            echo "Erro ao verificar credenciais: " . $e->getMessage();
+            return false;
+        }
+    }
+
     public function getUsuario() : int {
         return $this->idUsuario;
     }

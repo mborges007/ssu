@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' )
         <ul class="navbar-nav">
           <li class="nav-item">
             <button class="btn-nav">
-              <a href="usuario.html" class="nav-link">
+              <a href="dados_usuario.php" class="nav-link">
                 <i class="bi bi-person-circle"></i> Meu Perfil
               </a>
             </button>
