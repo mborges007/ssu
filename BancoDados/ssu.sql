@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE DATABASE SSU;
+USE SSU;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -73,8 +75,48 @@ CREATE TABLE `medicos` (
   `ID` int(10) NOT NULL,
   `CRM` varchar(10) NOT NULL,
   `Cidade` varchar(30) NOT NULL,
-  `id_especialidade` int(10) NOT NULL
+  `id_especialidade` int(10) NOT NULL,
+  `id_unidade` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Copiando estrutura para procedure ssu.ObterHorariosConsulta
+DELIMITER //
+CREATE PROCEDURE `ObterHorariosConsulta`(
+	IN `medico_id` INT,
+	IN `data` VARCHAR(20)
+)
+BEGIN
+    SELECT hora_consulta
+    FROM agendamentos
+    WHERE id_medico = medico_id AND data_consulta = data;
+END//
+DELIMITER ;
+
+-- Copiando estrutura para função ssu.AgendarConsulta
+DELIMITER //
+CREATE FUNCTION `AgendarConsulta`(
+    p_data_consulta varchar(20),
+    p_id_medico int,
+    p_id_paciente varchar(20),
+    p_hora_consulta varchar(20)
+) RETURNS int
+    DETERMINISTIC
+BEGIN
+    DECLARE agendamento_id INT;
+    DECLARE unidade INT;
+    
+    SELECT id_unidade INTO unidade FROM medicos WHERE ID = p_id_medico;
+
+    -- Insere o agendamento na tabela
+    INSERT INTO agendamentos (data_consulta, id_medico, id_paciente, hora_consulta, id_unidade)
+    VALUES (p_data_consulta, p_id_medico, p_id_paciente, p_hora_consulta, unidade);
+
+    -- Obtém o ID do agendamento recém-criado
+    SET agendamento_id = LAST_INSERT_ID();
+
+    RETURN agendamento_id;
+END//
+DELIMITER ;
 
 --
 -- Despejando dados para a tabela `medicos`
