@@ -24,7 +24,6 @@ $agenda = new Agenda();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <title>P.i SSU</title>
 </head>
-
 <body>
   <!-- Navbar -->
   <header>
@@ -54,6 +53,20 @@ $agenda = new Agenda();
       </div>
     </nav>
   </header>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('form').addEventListener('submit', function (event) {
+        var dataSelecionada = document.getElementById('dataSelecionada').value;
+        
+        // Verifica se a data foi selecionada
+        if (!dataSelecionada) {
+          alert('Por favor, selecione uma data no calendário.');
+          event.preventDefault(); // Impede o envio do formulário
+        }
+      });
+    });
+  </script>
 
   <body>
     <form action="agendamento.php" method="GET" novalidate>
@@ -147,7 +160,7 @@ $agenda = new Agenda();
         <h1>Médicos encontrados</h1>
 
         <?php if (empty($medicosFiltrados)) : ?>
-          <h1>Nenhum médico encontrado!</h1>
+          <h5>Nenhum médico encontrado!</h5>
         <?php else : ?>
 
           <?php foreach ($medicosFiltrados as $medico) : ?>
@@ -214,6 +227,7 @@ $agenda = new Agenda();
             $(button).addClass('selected');
           }
         </script>
+
 
       <?php endif; ?>
 
