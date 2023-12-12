@@ -28,7 +28,7 @@
       <!--<div class="collapse navbar-collapse" id="navCollapse">-->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="agendamento.php" class="nav-link">Nova Consulta</a>
+            <a href="./agendamento.php" class="nav-link">Nova Consulta</a>
           </li>
           <li class="nav-item">
             <a href="meus_agendamentos.html" class="nav-link">Meus agendamentos</a>
@@ -36,8 +36,20 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <button class="btn-nav"><a href="usuario.html" class="nav-link"><i class="bi bi-person-circle"></i> Meu Perfil</a></button>
+            <button class="btn-nav">
+              <a href="usuario.html" class="nav-link">
+                <i class="bi bi-person-circle"></i> Meu Perfil
+              </a>
+            </button>
           </li>
+          <li class="nav-item">
+            <button class="btn-nav">
+              <a href="logout.php" class="nav-link">
+                <i class="https://icons8.com.br/icon/2444/sair"></i> Sair<?php echo $nomeUsuario; ?>
+              </a>
+            </button>
+          </li>
+        </ul>>
         </ul>
       </div>
     </div>
