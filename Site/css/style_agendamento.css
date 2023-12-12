@@ -1,0 +1,361 @@
+/***** Navbar *****/
+
+nav {
+    height: 100px;
+    box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+    background-color: white;
+    text-align: center;
+}
+
+.navbar li a {
+    color: rgb(0, 77, 110);
+}
+
+.navbar li a:hover {
+    color:rgb(0, 179, 255);
+}
+
+.btn-nav {
+    background-color: white;
+    color: rgba(218, 224, 230, 0.582);
+    border: 2px solid rgba(218, 224, 230, 0.582);
+    border-radius: 50px;
+    float: right;
+}
+
+.btn-nav:hover {
+    border: 2px solid;
+    box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+}
+
+
+
+
+
+/**** AGENDAMENTO ****/
+
+#agendamento-title {
+    color: rgb(0, 77, 110);
+    text-align: center;
+    font-family: 'Gabarito', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom:30px;
+}
+
+#agendamento-text {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Segoe UI';
+    font-size: 42px;
+    font-weight: 400;
+}
+
+#agendamento-login {
+    background-image: url("../img/agendamento_background-1920x920.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 0px;
+  }
+
+  #agendamento-pesquisa {
+    padding-right: 50px;
+  }
+
+
+  .btn-agendamento {
+    color: white;
+    background-color:#073f60;
+    height: 50px;
+    width: 260px;
+    border: 0px solid;
+    border-radius: 10px;
+    margin-top: 25px;
+    float: center;
+  }
+
+  .btn-login {
+    background-color: white;
+    color: rgb(0, 77, 110);
+    border: 2px solid rgba(218, 224, 230, 0.582);
+    border-radius: 50px;
+    float: right;
+}
+
+  .text {
+    color: #2e2e2e;
+    font-size: 18.5px;
+    margin: 5px;
+    text-align: center;
+  }
+
+  #filtros {
+    margin-top: 15px;
+  }
+
+  #filtros .form-select{
+    margin: 5px;
+  }
+
+
+  #filtros .form-select{
+    box-shadow: 0 6px 20px 0 rgba(39,53,105,.2);
+  }   
+
+  #filtros .form-select:hover{
+    box-shadow: none;
+  }
+
+
+  .custom-select-wrapper {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 6px 20px 0 rgba(39,53,105,.2);
+    margin: 5px;
+  }
+
+  .custom-select-img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .custom-select {
+    width: 100%;
+    padding: 13px;
+    padding-left: 40px; /* Adjust the padding to make space for the image */
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    box-shadow: 0 6px 20px 0 rgba(39,53,105,.2);
+    color: #777777;
+  }
+
+  .custom-select:hover{
+    box-shadow: none;
+  }
+
+
+  .custom-select::after {
+    content: "\25BC"; /* Unicode character for down arrow */
+    font-size: 25px;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+
+  #filtros input {
+        width: 90%;
+        border: none;
+        outline: 0;
+        padding-top: 5px;
+    }
+
+    
+
+
+
+/** calendario **/
+
+  #calendario {
+    padding-left: 40px;
+  }
+
+   .calendar-section {
+    margin-bottom: 20px; }
+  
+  .calendar, .calendar_weekdays,
+  .calendar_content {
+    max-width: 585px; }
+  
+  .calendar {
+    /*float: left;*/
+    margin: auto;
+    min-width: 320px;
+    font-weight: 400;
+    background: #fff;
+    padding: 10px;
+    -webkit-box-shadow: 0px 4px 26px -22px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 4px 26px -22px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 4px 26px -22px rgba(0, 0, 0, 0.14); }
+  
+  .calendar_weekdays {
+    color: #aaa;
+    font-weight: 300; }
+  
+  .calendar_weekdays div {
+    display: inline-block;
+    vertical-align: top;
+    color: #000;
+    font-weight: 700; }
+  
+  .calendar_content, .calendar_weekdays, .calendar_header {
+    position: relative; }
+  
+  .calendar_content:after, .calendar_weekdays:after, .calendar_header:after {
+    content: ' ';
+    display: table;
+    clear: both; }
+  
+  .calendar_weekdays div, .calendar_content div {
+    /*border: 1px dotted #999;*/
+    width: 14.28571%;
+    height: 68px;
+    line-height: 69px;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent; }
+  
+  .calendar_content div {
+    float: left;
+    margin-left: -1px;
+    margin-top: -1px;
+    border: 1px solid transparent;
+    border-radius: 5px; }
+  
+  .calendar_content div:hover {
+    border: 1px solid #ededed;
+    /*line-height: 68px;*/
+    cursor: pointer; }
+  
+  .calendar_content div.blank:hover {
+    cursor: default;
+    border: none; }
+  
+  .calendar_content div.past-date {
+    cursor: initial;
+    color: #d5d5d5; }
+  
+  .calendar_content div.today {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    background-color: #0D84C8; }
+  
+  .calendar_content div.selected {
+    /*background-color: rgba(153, 153, 161, 0.2);*/
+    background-color: #0D84C8;
+    color: #fff;
+    font-size: 18px;
+    /*rgba(170, 170, 176, .5) #aaaab0*/
+    border: 1px solid white; }
+  
+  .calendar_header {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 55px;
+    display: table;
+    vertical-align: middle; }
+  
+  .calendar_header h2 {
+    margin-top: 15px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000 !important;
+    text-transform: uppercase; }
+  
+  button.switch-month {
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: #cccccc;
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s; }
+    button.switch-month.switch-left {
+      left: 0; }
+    button.switch-month.switch-right {
+      right: 0; }
+  
+  button.switch-month:hover {
+    color: #0D84C8; }
+  
+  button.switch-month:active {
+    background-color: transparent; }
+
+
+/*** lista de medicos ****/
+
+.card {
+    padding: 30px;
+    margin: 75px;
+}
+
+.card .row {
+    margin-top: 10px;
+}
+
+.card .btn-color {
+    margin-top: 50px;
+    width: 50%;
+    background-color: #0870b5; 
+    color: white;
+    box-shadow: 0 9px 15px 0 rgba(0, 0, 0, 0.2);  
+}
+
+.card .btn-color:hover {
+    background-color:#C2E7FF;
+    color: #001D35; 
+}
+
+#medicos h1 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+    margin-top: 100px;
+}
+
+#medicos h4 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+}
+
+#medicos h6 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 450;
+}
+
+#medicos #agendamento-horarios{
+    float: right;
+}
+
+#agendamento-horarios {
+    width: 200px;
+}
+
+#agendamento-horarios button {
+   width: 80px;
+}
+
+#agendamento-horarios .btn-custom{
+    background-color: #c0e7ff;
+    color: #2150f8;
+}
+
+#agendamento-horarios .btn-custom:hover{
+    background-color: #1566bc;
+    color: #fff;
+}
+
+
+
+    
+
