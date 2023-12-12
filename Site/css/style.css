@@ -456,6 +456,42 @@ hr {
     margin-top: 90px;
 }
 
+
+
+
+/****** agendamentos ******/ 
+
+#tabela .row {
+    margin-top: 180px;
+    margin-bottom: 90px;
+}
+
+#tabela h1 {
+    color:rgb(2, 57, 80);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 790;
+}
+
+#tabela th {
+    color: rgb(0, 77, 110);
+}
+
+#tabela td {
+    color: rgb(61, 61, 61);
+}
+
+#tabela .table-group-divider{
+    color: rgb(71, 179, 246);
+}
+
+
+
+
+
+
+
+
+
 /* Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
 @media (max-width: 575.98px) {
     .login{
@@ -486,6 +522,7 @@ hr {
     }
 
 }
+
 
 /* Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
 @media (min-width: 576px) and (max-width: 767.98px){
