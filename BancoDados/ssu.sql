@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/12/2023 às 19:49
+-- Tempo de geração: 12/12/2023 às 20:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -103,10 +103,10 @@ CREATE TABLE `pacientes` (
   `telefone` varchar(15) NOT NULL,
   `data_nasc` varchar(15) NOT NULL,
   `sexo` char(1) NOT NULL,
-  `endereco` varchar(40) NOT NULL,
-  `numero` int(5) NOT NULL,
-  `bairro` varchar(40) NOT NULL,
-  `cidade` varchar(50) NOT NULL,
+  `endereco` varchar(40) DEFAULT NULL,
+  `numero` int(5) DEFAULT NULL,
+  `bairro` varchar(40) DEFAULT NULL,
+  `cidade` varchar(50) DEFAULT NULL,
   `email` varchar(35) NOT NULL,
   `senha` varchar(8) NOT NULL,
   `registro` int(11) NOT NULL
@@ -195,6 +195,18 @@ ALTER TABLE `unidades`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `agendamento`
+--
+ALTER TABLE `agendamento`
+  MODIFY `id_agendamento` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `especialidades`
+--
+ALTER TABLE `especialidades`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `medicos`
