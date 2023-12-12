@@ -1,20 +1,27 @@
 <?php
+
 require_once('sessao.php');
 require_once('usuario.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "logar") {
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+if (isset($_POST['action']) && $_POST['action'] == 'logar') {
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-    if ($validCredentials) {
-        header("Location: agendamento.php");
-        exit(); 
+    $usuario = Usuario::buscarPorEmail($email);
+
+    if ($usuario != null && $usuario->getSenha() == $senha) {
+        $_SESSION['loggedin'] = true;
+        $_SESSION['usuario'] = $usuario;
+
+        if (Sessao::logado()) {
+            header('Location: agendamento.php');
+        }
     } else {
-
-        $errorMessage = "Email ou senha inválida, tente novamente!A";
+        $erro = 'Usuário ou senha incorretos';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt">
