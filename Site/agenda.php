@@ -11,10 +11,27 @@ class Agenda {
         $this->db = new Database();
     }
 
+    public function agendarConsulta($dataConsulta, $idMedico, $idPaciente, $hora)
+    {
+        try {
+            $conn = $this->db->getConnection();
+
+            $sql = "SELECT agendarConsulta('$dataConsulta', $idMedico, $idPaciente, $hora) as agenda_id";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetch();
+            
+        }
+        catch(PDOException $e) {
+            echo "". $e->getMessage();
+        }
+    }
+
     public function filtrarMedicos(string $cidade = null, int $especialidade = null, int $medico = null) 
     {
         try {
-            $conn = $conn = $this->db->getConnection();
+            $conn = $this->db->getConnection();
 
             $sql = "SELECT M.ID, M.CRM, M.NOME, M.CIDADE, E.DESCRICAO FROM MEDICOS M
             INNER JOIN ESPECIALIDADES E ON E.ID = M.ID_ESPECIALIDADE";

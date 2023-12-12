@@ -34,7 +34,8 @@ CREATE TABLE `agendamento` (
   `data_consulta` date NOT NULL,
   `id_paciente` int(11) NOT NULL,
   `hora_consulta` time NOT NULL,
-  `id_unidade` int(11) NOT NULL
+  `id_unidade` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -76,7 +77,7 @@ CREATE TABLE `medicos` (
   `CRM` varchar(10) NOT NULL,
   `Cidade` varchar(30) NOT NULL,
   `id_especialidade` int(10) NOT NULL,
-  `id_unidade` int NOT NULL
+  `id_unidade` INT(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Copiando estrutura para procedure ssu.ObterHorariosConsulta
@@ -207,7 +208,8 @@ INSERT INTO `unidades` (`endereco`, `qtde_medicos`, `telefone`, `cidade`, `ID`) 
 ALTER TABLE `agendamento`
   ADD PRIMARY KEY (`id_agendamento`),
   ADD KEY `FK_agendamentos_pacientes` (`id_paciente`),
-  ADD KEY `FK_agendamentos_unidades` (`id_unidade`);
+  ADD KEY `FK_agendamentos_unidades` (`id_unidade`),
+  ADD KEY `FK_agendamentos_medico` (`id_medico`);
 
 --
 -- Índices de tabela `especialidades`
@@ -277,7 +279,8 @@ ALTER TABLE `unidades`
 --
 ALTER TABLE `agendamento`
   ADD CONSTRAINT `FK_agendamentos_pacientes` FOREIGN KEY (`id_paciente`) REFERENCES `pacientes` (`registro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_agendamentos_unidades` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_agendamentos_unidades` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_agendamentos_medico` FOREIGN KEY (`id_medico`) REFERENCES `medicos` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Restrições para tabelas `medicos`

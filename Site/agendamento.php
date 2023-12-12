@@ -3,7 +3,7 @@
 require_once('agenda.php');
 require_once('sessao.php');
 
-validaAcesso("agendamento_login.html");
+validaAcesso("login.php");
 
 $agenda = new Agenda();
 
@@ -24,60 +24,42 @@ $agenda = new Agenda();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <title>P.i SSU</title>
 </head>
+
 <body>
   <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-md fixed-top">
       <div class="container">
         <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
- 
+
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
           <i class="bi bi-list bi-color"></i>
         </button>
- 
+
         <!--<div class="collapse navbar-collapse" id="navCollapse">-->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-            <a href="./agendamento.php" class="nav-link">Nova Consulta</a>
-            </li>
-            <li class="nav-item">
-              <a href="meus_agendamentos.html" class="nav-link">Meus agendamentos</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-                <li class="nav-item">
-                  <button class="btn-nav">
-                    <a href="usuario.html" class="nav-link">
-                      <i class="bi bi-person-circle"></i> Meu Perfil
-                    </a>
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button class="btn-nav">
-                    <a href="logout.php" class="nav-link">
-                      <i class="https://icons8.com.br/icon/2444/sair"></i> Sair<?php echo $nomeUsuario; ?>
-                    </a>
-                  </button>
-                </li>
-              </ul>
-        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="login.html" class="nav-link">Agendamentos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Pesquisar médicos</a>
+          </li>
+          <li class="nav-item">
+            <a href="./calendariovacinacao.html" class="nav-link">Vacinas</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Informações</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn-nav"><a href="login.html" class="nav-link"><i class="bi bi-person-circle"></i>Login / Cadastre-se</a></button>
+          </li>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelector('form').addEventListener('submit', function (event) {
-        var dataSelecionada = document.getElementById('dataSelecionada').value;
-        
-        // Verifica se a data foi selecionada
-        if (!dataSelecionada) {
-          alert('Por favor, selecione uma data no calendário.');
-          event.preventDefault(); // Impede o envio do formulário
-        }
-      });
-    });
-  </script>
 
   <body>
     <form action="agendamento.php" method="GET" novalidate>
@@ -171,11 +153,14 @@ $agenda = new Agenda();
         <h1>Médicos encontrados</h1>
 
         <?php if (empty($medicosFiltrados)) : ?>
-          <h5>Nenhum médico encontrado!</h5>
+          <h1>Nenhum médico encontrado!</h1>
         <?php else : ?>
 
           <?php foreach ($medicosFiltrados as $medico) : ?>
-            <form method="post" action="" id="form-agendamento">
+            <form method="post" action="meus_agendamentos.html" id="form-agendamento">
+            <input type="hidden" name="medico_agenda" id="medico_agenda" value="">
+            <input type="hidden" name="hora_agenda" id="hora_agenda" value="">
+
             <div class="card">
               <div class="row">
                 <div class="col-md-6">
@@ -192,7 +177,7 @@ $agenda = new Agenda();
                     <h6> CRM: <?php echo $medico->getCRM() ?> </h6>
                   </div>
                   <div class="row">
-                    <a class="btn btn-color">Agendar</a>
+                    <button type="submit" class="btn btn-color">Agendar</a>
                   </div>
                 </div>
 
@@ -209,9 +194,8 @@ $agenda = new Agenda();
                         $vagas = $horarios;
                       }
 
-                      
                       foreach ($vagas as $vaga) : ?>
-                        <button type="button" class="btn btn-custom m-1 time-slot " data-group="medico<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this)">
+                        <button type="button" class="btn btn-custom m-1 time-slot" data-group="<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this, <?php echo $vaga; ?>)">
                           <?php echo $vaga . ":00" ?>
                         </button>
                       <?php endforeach; ?>
@@ -226,7 +210,7 @@ $agenda = new Agenda();
         <?php endif; ?>
 
         <script>
-          function handleButtonClick(button) {
+          function handleButtonClick(button, hora) {
             console.log("TESTE");
             // Get the data-group attribute value
             var group = $(button).data('group');
@@ -236,9 +220,10 @@ $agenda = new Agenda();
 
             // Select the clicked button
             $(button).addClass('selected');
+            $('#medico_agenda').val(group);
+            $('#hora_agenda').val(hora);
           }
         </script>
-
 
       <?php endif; ?>
 
