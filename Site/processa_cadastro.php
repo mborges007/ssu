@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($cadastradoComSucesso) {
         echo "Usuário cadastrado com sucesso!";
-        header('Location: login.php');
+        header('Location: login.html');
     } else {
         echo "Erro ao cadastrar o usuário. Verifique os dados e tente novamente.";
     }
