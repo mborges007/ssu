@@ -31,32 +31,26 @@ $agenda = new Agenda();
     <nav class="navbar navbar-expand-md fixed-top">
       <div class="container">
         <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
-
+ 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
           <i class="bi bi-list bi-color"></i>
         </button>
-
+ 
         <!--<div class="collapse navbar-collapse" id="navCollapse">-->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="login.html" class="nav-link">Agendamentos</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Pesquisar médicos</a>
-          </li>
-          <li class="nav-item">
-            <a href="./calendariovacinacao.html" class="nav-link">Vacinas</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Informações</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <button class="btn-nav"><a href="login.html" class="nav-link"><i class="bi bi-person-circle"></i>Login / Cadastre-se</a></button>
-          </li>
-        </ul>
-      </div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="agendamento.php" class="nav-link">Nova Consulta</a>
+            </li>
+            <li class="nav-item">
+              <a href="meus_agendamentos.html" class="nav-link">Meus agendamentos</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn-nav"><a href="usuario.html" class="nav-link"><i class="bi bi-person-circle"></i> Meu Perfil</a></button>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
