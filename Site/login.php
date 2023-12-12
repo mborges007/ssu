@@ -10,7 +10,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'logar') {
     $usuario = Usuario::buscarPorEmail($email);
 
     if ($usuario != null && $usuario->getSenha() == $senha) {
-        $_SESSION['loggedin'] = true;
+        $_SESSION['logado'] = true;
         $_SESSION['usuario'] = $usuario;
 
         if (Sessao::logado()) {
