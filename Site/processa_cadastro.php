@@ -1,31 +1,23 @@
 <?php
-require('config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+    require_once('cadastro.php');
+    $cadastro = new Cadastro();
+    
     $nome = $_POST['nome'];
     $cpf = $_POST['cpf'];
     $telefone = $_POST['telefone'];
-    $data_nascimento = $_POST['data_nascimento'];
+    $dataNascimento = $_POST['data_nascimento'];
     $genero = $_POST['genero'];
     $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $senha = $_POST['senha'];
 
+    $cadastradoComSucesso = $cadastro->cadastrarUsuario($nome, $cpf, $telefone, $dataNascimento, $genero, $email, $senha);
 
-    $sql = "INSERT INTO usuarios (nome, cpf, telefone, data_nascimento, genero, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $nome, $cpf, $telefone, $data_nascimento, $genero, $email, $senha);
-    
-    if ($stmt->execute()) {
-
-        header("Location: login.php");
+    if ($cadastradoComSucesso) {
+        echo "Usuário cadastrado com sucesso!";
     } else {
-        echo "Erro ao cadastrar o usu�rio: " . $stmt->error;
+        echo "Erro ao cadastrar o usuário. Verifique os dados e tente novamente.";
     }
-
-    $stmt->close();
 }
-
-$conn->close();
 ?>

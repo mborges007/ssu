@@ -13,13 +13,13 @@ class Cadastro {
         try {
             $conn = $this->db->getConnection();
 
-            $sql = "INSERT INTO usuarios (nome, cpf, telefone, data_nascimento, genero, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO pacientes (nome, cpf, telefone, data_nasc, sexo, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$nome, $cpf, $telefone, $dataNascimento, $genero, $email, password_hash($senha, PASSWORD_DEFAULT)]);
+            $stmt->execute([$nome, $cpf, $telefone, $dataNascimento, $genero, $email, $senha]);
 
             return true;
         } catch (PDOException $e) {
-            echo "Erro ao cadastrar o usuário: " . $e->getMessage();
+            echo "Erro ao cadastrar o usuÃ¡rio: " . $e->getMessage();
             return false;
         }
     }

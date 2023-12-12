@@ -11,16 +11,15 @@ class Agenda {
         $this->db = new Database();
     }
 
-    public function filtrarMedicos($data, string $cidade = null, int $especialidade = null, string $nome = null) 
+    public function filtrarMedicos(string $cidade = null, int $especialidade = null, int $medico = null) 
     {
         try {
             $conn = $conn = $this->db->getConnection();
 
-            $sql = "SELECT M.ID, M.CRM, M.NOME, M.CIDADE, E.DESCRICAO, A.HORA_CONSULTA FROM MEDICOS M
-            INNER JOIN ESPECIALIDADE E ON E.ID = M.ID_ESPECIALIDADE
-            INNER JOIN AGENDAMENTOS A ON A.ID_MEDICO = M.ID";
+            $sql = "SELECT M.ID, M.CRM, M.NOME, M.CIDADE, E.DESCRICAO FROM MEDICOS M
+            INNER JOIN ESPECIALIDADES E ON E.ID = M.ID_ESPECIALIDADE";
 
-            if ($cidade != null || $especialidade != null || $nome != null)
+            if ($cidade != null || $especialidade != null || $medico != null)
             {
                 $sql .= " WHERE ";
 
@@ -34,9 +33,9 @@ class Agenda {
                     $sql .= ($cidade != null ? " AND " : "") . "M.ID_ESPECIALIDADE = '$especialidade'";
                 }
             
-                if ($nome != null)
+                if ($medico != null)
                 {
-                    $sql .= (($cidade != null || $especialidade != null) ? " AND " : "") . "M.NOME = '$nome'";
+                    $sql .= (($cidade != null || $especialidade != null) ? " AND " : "") . "M.ID = '$medico'";
                 }
             }
 
@@ -56,7 +55,6 @@ class Agenda {
 
                 $medico->setEspecialidade(new Especialidade());
                 $especialidade = $medico->getEspecialidade();
-                $especialidade->setId($row["ID_ESPECIALIDADE"]);
                 $especialidade->setDescricao($row["DESCRICAO"]);
 
                 $medicos[] = $medico;
@@ -68,6 +66,30 @@ class Agenda {
         catch(PDOException $e) {
             echo "". $e->getMessage();
         }
+    }
+
+    public function obterHorariosConsulta(int $medicoId, $dia)
+    {
+        try{
+            $conn = $this->db->getConnection();
+
+            $query = "CALL ObterHorariosConsulta($medicoId, '$dia')";
+            $stmt = $conn->prepare($query);
+
+            $stmt->execute();
+            $result =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $horarios = [];
+            foreach ($result as $row){
+                $horarios[] = intval($row['hora_consulta']);
+            }
+
+            return $horarios;
+        }
+        catch(PDOexception $e){
+            echo "". $e->getMessage(); 
+        }
+
     }
 
     public function listarMedicos() 
@@ -158,6 +180,4 @@ class Agenda {
             echo "". $e->getMessage();
         }
     }
-
-
 }
