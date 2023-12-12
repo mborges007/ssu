@@ -128,6 +128,7 @@ nav {
     text-align: center;
     padding-top: 120px;
     height: 750px;
+    object-fit: cover;
 }
 
 #front h1 {
@@ -518,3 +519,9 @@ hr {
     }
 }
 
+@media (min-width: 1440px) {
+   #front{
+    margin-left: 8%;
+    
+   }
+}
