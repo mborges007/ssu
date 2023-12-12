@@ -1,5 +1,6 @@
 <?php
 
+
 $loginFalhou = false;
     
 if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -28,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $_SESSION["loggedin"] = TRUE;
             $_SESSION["id"] = $login->getUsuario();
-            header("Location: index.html");
+            header("Location: agendamento.php");
             exit;
         }
     }

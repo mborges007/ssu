@@ -3,22 +3,9 @@
 require_once('sessao.php');
 require_once('usuario.php');
 
-if (isset($_POST['action']) && $_POST['action'] == 'logar') {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    $usuario = Usuario::buscarPorEmail($email);
-
-    if ($usuario != null && $usuario->getSenha() == $senha) {
-        $_SESSION['logado'] = true;
-        $_SESSION['usuario'] = $usuario;
-
-        if (Sessao::logado()) {
-            header('Location: agendamento.php');
-        }
-    } else {
-        $erro = 'Usuário ou senha incorretos';
-    }
+if (verificaSeJaEstaLogado())
+{
+    header("location: index.php");
 }
 ?>
 
@@ -47,7 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'logar') {
     </div>
     <div class="login" id="login">
         <div class="row">
-            <a class="col-sm-6 acessar-p" href="login.html">Fazer login</a>
+            <a class="col-sm-6 acessar-p" href="login.php">Fazer login</a>
             <a class="col-sm-6 acessar-n" href="cadastro.html">Criar conta</a> 
         </div>
         <h2>Acesse sua conta</h2>  

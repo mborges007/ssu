@@ -1,3 +1,27 @@
+<?php
+
+require_once('agenda.php');
+require_once('sessao.php');
+
+validaAcesso("login.php");
+
+$agenda = new Agenda();
+$id_paciente = $_SESSION["id"];
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' )
+{
+  $data = $_POST['data_agenda'];
+  $id_medico = $_POST['medico_agenda'];
+  $hora = $_POST['hora_agenda'];
+
+  $agenda->agendarConsulta($data, $id_medico, $id_paciente, $hora);
+
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +55,7 @@
             <a href="./agendamento.php" class="nav-link">Nova Consulta</a>
           </li>
           <li class="nav-item">
-            <a href="meus_agendamentos.html" class="nav-link">Meus agendamentos</a>
+            <a href="meus_agendamentos.php" class="nav-link">Meus agendamentos</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -45,11 +69,11 @@
           <li class="nav-item">
             <button class="btn-nav">
               <a href="logout.php" class="nav-link">
-                <i class="https://icons8.com.br/icon/2444/sair"></i> Sair<?php echo $nomeUsuario; ?>
+                <i class="https://icons8.com.br/icon/2444/sair"></i> Sair
               </a>
             </button>
           </li>
-        </ul>>
+        </ul>
         </ul>
       </div>
     </div>
@@ -72,19 +96,17 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
+      <?php 
+        $result = $agenda->carregarAgendas($id_paciente);
+
+        foreach ($result as $a) : ?>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@fat</td>
+          <td><?php echo $a['data_consulta'] ?></td>
+          <td><?php echo $a['hora_consulta'] ?></td>
+          <td><?php echo $a['nome'] ?></td>
+          <td><?php echo $a['endereco'] ?></td>
         </tr>
-        <tr>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>

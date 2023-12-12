@@ -64,6 +64,7 @@
 
 					passed_month = passed_month + 1;
 					$('#dataSelecionada').val(clicked.text() + '-' + passed_month + '-' + passed_year);
+					$('#dataSelecionada').val(passed_year + '-' + passed_month + '-' + clicked.text());
 	
 					// Do something with the selected date, for example, display it
 					console.log("Selected date:", passed_year, passed_month, clicked.text());

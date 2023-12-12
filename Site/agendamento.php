@@ -28,38 +28,58 @@ $agenda = new Agenda();
 <body>
   <!-- Navbar -->
   <header>
-    <nav class="navbar navbar-expand-md fixed-top">
-      <div class="container">
-        <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+      <a href="index.html"><img src="./img/Logo+escrita_sem_fundo.png" alt="Logotipo" width="175" class="img-nav"></a>
 
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
-          <i class="bi bi-list bi-color"></i>
-        </button>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse"> <!--botão da navbar no small-->
+        <i class="bi bi-list bi-color"></i>
+      </button>
 
-        <!--<div class="collapse navbar-collapse" id="navCollapse">-->
+      <!--<div class="collapse navbar-collapse" id="navCollapse">-->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="login.html" class="nav-link">Agendamentos</a>
+            <a href="./agendamento.php" class="nav-link">Nova Consulta</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Pesquisar médicos</a>
-          </li>
-          <li class="nav-item">
-            <a href="./calendariovacinacao.html" class="nav-link">Vacinas</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Informações</a>
+            <a href="meus_agendamentos.php" class="nav-link">Meus agendamentos</a>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <button class="btn-nav"><a href="login.html" class="nav-link"><i class="bi bi-person-circle"></i>Login / Cadastre-se</a></button>
+            <button class="btn-nav">
+              <a href="usuario.html" class="nav-link">
+                <i class="bi bi-person-circle"></i> Meu Perfil
+              </a>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn-nav">
+              <a href="logout.php" class="nav-link">
+                <i class="https://icons8.com.br/icon/2444/sair"></i> Sair
+              </a>
+            </button>
           </li>
         </ul>
+        </ul>
       </div>
-      </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('form').addEventListener('submit', function (event) {
+        var dataSelecionada = document.getElementById('dataSelecionada').value;
+        
+        // Verifica se a data foi selecionada
+        if (!dataSelecionada) {
+          alert('Por favor, selecione uma data no calendário.');
+          event.preventDefault(); // Impede o envio do formulário
+        }
+      });
+    });
+  </script>
 
   <body>
     <form action="agendamento.php" method="GET" novalidate>
@@ -156,57 +176,60 @@ $agenda = new Agenda();
           <h1>Nenhum médico encontrado!</h1>
         <?php else : ?>
 
-          <?php foreach ($medicosFiltrados as $medico) : ?>
-            <form method="post" action="meus_agendamentos.html" id="form-agendamento">
-            <input type="hidden" name="medico_agenda" id="medico_agenda" value="">
-            <input type="hidden" name="hora_agenda" id="hora_agenda" value="">
+          <form method="post" action="meus_agendamentos.php" id="form-agendamento">
+            <input type="hidden" name="medico_agenda" id="medico_agenda">
+            <input type="hidden" name="hora_agenda" id="hora_agenda">
+            <input type="hidden" name="data_agenda" id="data_agenda" value="<?php echo $dataSelecionada; ?>">
 
-            <div class="card">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <h4>Médico: <?php echo $medico->getNome(); ?> </h4>
-                  </div>
-                  <div class="row">
-                    <h6> Especialidade: <?php echo $medico->getEspecialidade()->getDescricao(); ?> </h6>
-                  </div>
-                  <div class="row">
-                    <h6> Cidade: <?php echo $medico->getCidade() ?></h6>
-                  </div>
-                  <div class="row">
-                    <h6> CRM: <?php echo $medico->getCRM() ?> </h6>
-                  </div>
-                  <div class="row">
-                    <button type="submit" class="btn btn-color">Agendar</a>
-                  </div>
-                </div>
+            <?php foreach ($medicosFiltrados as $medico) : ?>
 
-                <div class="col-md-6">
-                  <div class="modal-body">
-                    <div class="" role="group" id="agendamento-horarios">
-                      <?php
-                      $consultas = $agenda->obterHorariosConsulta($medico->getId(), $dataSelecionada);
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <h4>Médico: <?php echo $medico->getNome(); ?> </h4>
+                    </div>
+                    <div class="row">
+                      <h6> Especialidade: <?php echo $medico->getEspecialidade()->getDescricao(); ?> </h6>
+                    </div>
+                    <div class="row">
+                      <h6> Cidade: <?php echo $medico->getCidade() ?></h6>
+                    </div>
+                    <div class="row">
+                      <h6> CRM: <?php echo $medico->getCRM() ?> </h6>
+                    </div>
+                    <div class="row">
+                      <button type="submit" name="submit" class="btn btn-color">Agendar</a>
+                    </div>
+                  </div>
 
-                      $vagas = [];
-                      if ($consultas != null) {
-                        $vagas = array_diff($horarios, $consultas);
-                      } else {
-                        $vagas = $horarios;
-                      }
+                  <div class="col-md-6">
+                    <div class="modal-body">
+                      <div class="" role="group" id="agendamento-horarios">
+                        <?php
+                        $consultas = $agenda->obterHorariosConsulta($medico->getId(), $dataSelecionada);
 
-                      foreach ($vagas as $vaga) : ?>
-                        <button type="button" class="btn btn-custom m-1 time-slot" data-group="<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this, <?php echo $vaga; ?>)">
-                          <?php echo $vaga . ":00" ?>
-                        </button>
-                      <?php endforeach; ?>
+                        $vagas = [];
+                        if ($consultas != null) {
+                          $vagas = array_diff($horarios, $consultas);
+                        } else {
+                          $vagas = $horarios;
+                        }
 
+                        foreach ($vagas as $vaga) : ?>
+                          <button type="button" class="btn btn-custom m-1 time-slot" data-group="<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this, <?php echo $vaga; ?>)">
+                            <?php echo $vaga . ":00" ?>
+                          </button>
+                        <?php endforeach; ?>
+
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-          <?php endforeach; ?>
+            <?php endforeach; ?>
+          </form>
         <?php endif; ?>
 
         <script>
@@ -218,6 +241,8 @@ $agenda = new Agenda();
             // Unselect all buttons in the same group
             $('.time-slot[data-group="' + group + '"]').removeClass('selected');
 
+            console.log(group);
+            console.log(hora);
             // Select the clicked button
             $(button).addClass('selected');
             $('#medico_agenda').val(group);

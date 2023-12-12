@@ -11,12 +11,42 @@ class Agenda {
         $this->db = new Database();
     }
 
+    public function carregarAgendas($idPaciente)
+    {
+
+        try{
+            $conn = $this->db->getConnection();
+
+            $sql = "SELECT a.data_consulta, a.hora_consulta, m.nome, u.endereco from agendamento a
+            INNER JOIN unidades u ON u.ID = a.id_unidade
+            INNER JOIN medicos m on m.ID = a.id_medico
+            WHERE a.id_paciente = $idPaciente;";
+
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }        
+    catch(PDOException $e) {
+            echo "". $e->getMessage();
+        }
+
+
+
+    }
+
     public function agendarConsulta($dataConsulta, $idMedico, $idPaciente, $hora)
     {
         try {
             $conn = $this->db->getConnection();
 
-            $sql = "SELECT agendarConsulta('$dataConsulta', $idMedico, $idPaciente, $hora) as agenda_id";
+            $dateTime = new DateTime("today +{$hora} hours");
+
+            // Format the DateTime object as a time
+            $formattedTime = $dateTime->format('H:i');
+
+            $sql = "SELECT agendarConsulta('$dataConsulta', $idMedico, $idPaciente, '$formattedTime') as agenda_id";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
@@ -90,7 +120,10 @@ class Agenda {
         try{
             $conn = $this->db->getConnection();
 
-            $query = "CALL ObterHorariosConsulta($medicoId, '$dia')";
+            $dateTime = DateTime::createFromFormat('Y-m-d', $dia);
+            $formattedDate = $dateTime->format('Y.m.d');
+
+            $query = "CALL ObterHorariosConsulta($medicoId, '$formattedDate')";
             $stmt = $conn->prepare($query);
 
             $stmt->execute();
