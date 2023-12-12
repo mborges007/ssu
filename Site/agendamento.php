@@ -157,7 +157,7 @@ $agenda = new Agenda();
         <?php else : ?>
 
           <?php foreach ($medicosFiltrados as $medico) : ?>
-
+            <form method="post" action="" id="form-agendamento">
             <div class="card">
               <div class="row">
                 <div class="col-md-6">
@@ -191,12 +191,12 @@ $agenda = new Agenda();
                         $vagas = $horarios;
                       }
 
+                      
                       foreach ($vagas as $vaga) : ?>
                         <button type="button" class="btn btn-custom m-1 time-slot " data-group="medico<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this)">
                           <?php echo $vaga . ":00" ?>
                         </button>
                       <?php endforeach; ?>
-
 
                     </div>
                   </div>

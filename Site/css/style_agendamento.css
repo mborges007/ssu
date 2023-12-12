@@ -350,14 +350,14 @@ nav {
     color: #2150f8;
 }
 
+#agendamento-horarios .btn-custom.selected{
+  background-color: #1566bc;
+  color: #fff;
+
+}
+
 #agendamento-horarios .btn-custom:hover,
 #agendamento-horarios .btn-custom:active {
     background-color: #1566bc;
     color: #fff;
 }
-
-.btn-custom.selected {
-  background-color: #1566bc;
-  color: #fff;
-}
-
