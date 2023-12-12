@@ -180,16 +180,24 @@ $agenda = new Agenda();
 
                 <div class="col-md-6">
                   <div class="modal-body">
-                    <div class="" id="agendamento-horarios">
+                    <div class="" role="group" id="agendamento-horarios">
                       <?php
                       $consultas = $agenda->obterHorariosConsulta($medico->getId(), $dataSelecionada);
 
-                      $vagas = array_diff($horarios, $consultas);
+                      $vagas = [];
+                      if ($consultas != null) {
+                        $vagas = array_diff($horarios, $consultas);
+                      } else {
+                        $vagas = $horarios;
+                      }
+
                       foreach ($vagas as $vaga) : ?>
-                        <button type="button" class="btn btn-custom m-1 time-slot " data-group="medico<?php echo $medico->getId(); ?>">
+                        <button type="button" class="btn btn-custom m-1 time-slot " data-group="medico<?php echo $medico->getId(); ?>" onclick="handleButtonClick(this)">
                           <?php echo $vaga . ":00" ?>
                         </button>
                       <?php endforeach; ?>
+
+
                     </div>
                   </div>
                 </div>
@@ -199,39 +207,25 @@ $agenda = new Agenda();
           <?php endforeach; ?>
         <?php endif; ?>
 
-        
         <script>
-          $(document).ready(function() {
-            $('.time-slot').on('click', function(e) {
+          function handleButtonClick(button) {
+            console.log("TESTE");
+            // Get the data-group attribute value
+            var group = $(button).data('group');
 
-              
-              // Get the data-group attribute value
-              var group = $(this).data('group');
-              console.log("AH");
-              // Unselect all buttons in the same group
-              $('.time-slot[data-group="' + group + '"]').removeClass('selected');
+            // Unselect all buttons in the same group
+            $('.time-slot[data-group="' + group + '"]').removeClass('selected');
 
-              // Select the clicked button
-              $(this).addClass('selected');
-            });
-          });
-        </script> 
+            // Select the clicked button
+            $(button).addClass('selected');
+          }
+        </script>
 
       <?php endif; ?>
 
-
-
-
-
-
-
-
-
-
-
       <script src="js/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      
+
       <script src="js/calendar.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
