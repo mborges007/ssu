@@ -1,8 +1,19 @@
 <?php
-
 require_once('sessao.php');
 require_once('usuario.php');
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "logar") {
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+
+    if ($validCredentials) {
+        header("Location: agendamento.php");
+        exit(); 
+    } else {
+
+        $errorMessage = "Email ou senha inválida, tente novamente!A";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +32,6 @@ require_once('usuario.php');
 
 </head>
 <body>
-
 
 <!-- login -->
 <div class="container">
@@ -45,12 +55,15 @@ require_once('usuario.php');
                 </div>
             </div>
             <a class="esq" href="#">Esqueceu sua senha?</a>
+            <?php
+            if (isset($errorMessage)) {
+                echo '<div class="error-message">' . $errorMessage . '</div>';
+            }
+            ?>
             <button class="btn" type="submit">Entrar</button>
         </form>
     </div>
 </div>
-
-
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">    
 </body>
