@@ -123,16 +123,16 @@ DELIMITER ;
 -- Despejando dados para a tabela `medicos`
 --
 
-INSERT INTO `medicos` (`nome`, `ID`, `CRM`, `Cidade`, `id_especialidade`) VALUES
-('Nelson Dimas Brambilla', 1, '42.929', 'Leme', 2),
-('Oswaldo Colombini Neto', 2, '108.472', 'Araras', 2),
-('Ana Paula Delgado', 3, '90.376', 'Araras', 4),
-('Bruno Appolari', 4, '151.650', 'Leme', 9),
-('Selma Lara Teixeira ', 5, '54.435', 'Araras', 4),
-('Rodrigo Dias da Costa', 6, '147.809', 'Leme', 2),
-('Jean Tonelli', 7, '95.053', 'Araras', 9),
-('Jardel Dair Filho', 8, '107.804', 'Araras', 4),
-('Fabio Volpon Santos', 9, '67.729', 'Araras', 9);
+INSERT INTO `medicos` (`nome`, `ID`, `CRM`, `Cidade`, `id_especialidade`, `id_unidade`) VALUES
+('Nelson Dimas Brambilla', 1, '42.929', 'Leme', 2, 1),
+('Oswaldo Colombini Neto', 2, '108.472', 'Araras', 2, 4),
+('Ana Paula Delgado', 3, '90.376', 'Araras', 4, 4),
+('Bruno Appolari', 4, '151.650', 'Leme', 9, 5),
+('Selma Lara Teixeira ', 5, '54.435', 'Araras', 4, 3),
+('Rodrigo Dias da Costa', 6, '147.809', 'Leme', 2, 9),
+('Jean Tonelli', 7, '95.053', 'Araras', 9, 7),
+('Jardel Dair Filho', 8, '107.804', 'Araras', 4, 6),
+('Fabio Volpon Santos', 9, '67.729', 'Araras', 9, 3);
 
 -- --------------------------------------------------------
 
@@ -222,7 +222,9 @@ ALTER TABLE `especialidades`
 --
 ALTER TABLE `medicos`
   ADD PRIMARY KEY (`ID`) USING BTREE,
-  ADD KEY `FK_medicos_especialidades` (`id_especialidade`);
+  ADD KEY `FK_medicos_especialidades` (`id_especialidade`),
+  ADD KEY `FK_medicos_unidade` (`id_unidade`);
+
 
 --
 -- Índices de tabela `pacientes`
@@ -286,7 +288,8 @@ ALTER TABLE `agendamento`
 -- Restrições para tabelas `medicos`
 --
 ALTER TABLE `medicos`
-  ADD CONSTRAINT `FK_medicos_especialidades` FOREIGN KEY (`id_especialidade`) REFERENCES `especialidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `FK_medicos_especialidades` FOREIGN KEY (`id_especialidade`) REFERENCES `especialidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,s
+  ADD CONSTRAINT `FK_medicos_unidade` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
