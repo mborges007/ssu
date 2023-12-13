@@ -3,7 +3,7 @@
 class Database {
     private $host = '127.0.0.1';
     private $user = 'root';
-    private $password = 'admin';
+    private $password = '';
     private $database = 'ssu';
 
     protected $conn;

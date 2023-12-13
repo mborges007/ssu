@@ -88,7 +88,7 @@ $perfil = $user->Perfil($id_paciente);
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="./img/img-user/gamer.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="155">
                                 <div class="mt-3">
-                                    <h4>Usuário Teste</h4>
+                                    <h4><?php echo $perfil['nome']; ?></h4>
                                     <p class="text-secondary mb-1">Paciente</p>
                                     <p class="text-muted font-size-sm">Araras - SP</p>
                                 </div>
@@ -145,7 +145,7 @@ $perfil = $user->Perfil($id_paciente);
                                     <h6 class="mb-0">Endereço</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="<?php echo $perfil['endereco']; ?>">
+                                    <input type="text" class="form-control" value="Rua Luiz Amorim">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -153,7 +153,7 @@ $perfil = $user->Perfil($id_paciente);
                                     <h6 class="mb-0">Bairro</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="<?php echo $perfil['bairro']; ?>">
+                                    <input type="text" class="form-control" value="jd candida">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -161,7 +161,7 @@ $perfil = $user->Perfil($id_paciente);
                                     <h6 class="mb-0">N°</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <input type="text" class="form-control" value="<?php echo $perfil['numero']; ?>">
+                                    <input type="text" class="form-control" value="458">
                                 </div>
                             </div>
 
