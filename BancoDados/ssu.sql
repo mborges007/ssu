@@ -288,7 +288,7 @@ ALTER TABLE `agendamento`
 -- Restrições para tabelas `medicos`
 --
 ALTER TABLE `medicos`
-  ADD CONSTRAINT `FK_medicos_especialidades` FOREIGN KEY (`id_especialidade`) REFERENCES `especialidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,s
+  ADD CONSTRAINT `FK_medicos_especialidades` FOREIGN KEY (`id_especialidade`) REFERENCES `especialidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_medicos_unidade` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
