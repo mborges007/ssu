@@ -88,7 +88,7 @@ CREATE PROCEDURE `ObterHorariosConsulta`(
 )
 BEGIN
     SELECT hora_consulta
-    FROM agendamentos
+    FROM agendamento
     WHERE id_medico = medico_id AND data_consulta = data;
 END//
 DELIMITER ;
